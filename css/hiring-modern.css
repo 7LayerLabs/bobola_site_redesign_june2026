@@ -1,0 +1,676 @@
+/* Modern Hiring Page - Creative Redesign */
+
+/* Hero Section - Full Impact */
+.hiring-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 140px 20px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hiring-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/Home/inside.jpg') center/cover;
+  opacity: 0.12;
+}
+
+.hiring-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top right, #f8fafc 49%, transparent 51%);
+}
+
+.hiring-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hiring-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(163, 0, 16, 0.9);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.hiring-hero-badge svg {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.hiring-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.hiring-hero h1 span {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hiring-hero p {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form Container */
+.hiring-form-container {
+  max-width: 900px;
+  margin: -60px auto 60px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Titles */
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-header.centered {
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 6px 0;
+}
+
+.section-header p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Form Card */
+.form-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  padding: 36px;
+  margin-bottom: 24px;
+}
+
+/* Modern Input Styling */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+  width: 100%;
+  padding: 16px 18px;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #a30010;
+  box-shadow: 0 0 0 4px rgba(163, 0, 16, 0.08);
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.input-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.input-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  padding-right: 48px;
+}
+
+/* Two Column Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .form-row,
+  .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   POSITION CARDS - Interactive Selection
+   ============================================ */
+.position-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+  max-width: 512px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.position-card {
+  width: 160px;
+  flex-shrink: 0;
+  position: relative;
+  background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.position-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.position-card input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.position-card-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.position-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.position-card-check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background: #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.position-card-check svg {
+  width: 14px;
+  height: 14px;
+  stroke: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Position Card Selected State */
+.position-card:has(input:checked) {
+  background: linear-gradient(145deg, #fef2f2 0%, #fee2e2 100%);
+  border-color: #a30010;
+  box-shadow: 0 8px 25px rgba(163, 0, 16, 0.15);
+}
+
+.position-card:has(input:checked) .position-card-icon {
+  background: linear-gradient(135deg, #a30010 0%, #d4001a 100%);
+  box-shadow: 0 6px 20px rgba(163, 0, 16, 0.3);
+}
+
+.position-card:has(input:checked) .position-card-icon span {
+  filter: grayscale(1) brightness(10);
+}
+
+.position-card:has(input:checked) .position-card-check {
+  background: linear-gradient(135deg, #a30010 0%, #d4001a 100%);
+}
+
+.position-card:has(input:checked) .position-card-check svg {
+  opacity: 1;
+}
+
+/* ============================================
+   EMPLOYMENT TYPE - Toggle Pills
+   ============================================ */
+.toggle-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.toggle-pill {
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-pill input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-pill-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: #f1f5f9;
+  border: 2px solid #e2e8f0;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #475569;
+  transition: all 0.3s ease;
+}
+
+.toggle-pill-label svg {
+  width: 18px;
+  height: 18px;
+  stroke: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.toggle-pill:hover .toggle-pill-label {
+  border-color: #cbd5e1;
+  background: #fff;
+}
+
+.toggle-pill input:checked + .toggle-pill-label {
+  background: linear-gradient(135deg, #a30010 0%, #d4001a 100%);
+  border-color: #a30010;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(163, 0, 16, 0.3);
+}
+
+.toggle-pill input:checked + .toggle-pill-label svg {
+  stroke: #fff;
+}
+
+/* ============================================
+   AVAILABILITY - Modern Grid
+   ============================================ */
+.availability-wrapper {
+  background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 8px;
+}
+
+.availability-grid-modern {
+  display: grid;
+  gap: 12px;
+}
+
+.availability-row {
+  display: grid;
+  grid-template-columns: 100px repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.availability-row.header {
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 4px;
+}
+
+.availability-day {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.availability-header-cell {
+  text-align: center;
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.availability-header-cell .abbr {
+  display: none;
+}
+
+.availability-header-cell small {
+  display: block;
+  font-weight: 400;
+  color: #94a3b8;
+  font-size: 0.7rem;
+  margin-top: 2px;
+  text-transform: none;
+}
+
+.availability-cell {
+  display: flex;
+  justify-content: center;
+}
+
+.availability-toggle {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.availability-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.availability-toggle-box {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.availability-toggle-box svg {
+  width: 20px;
+  height: 20px;
+  stroke: #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.availability-toggle:hover .availability-toggle-box {
+  border-color: #a30010;
+  background: #fef2f2;
+}
+
+.availability-toggle input:checked + .availability-toggle-box {
+  background: linear-gradient(135deg, #a30010 0%, #d4001a 100%);
+  border-color: #a30010;
+  box-shadow: 0 4px 12px rgba(163, 0, 16, 0.25);
+}
+
+.availability-toggle input:checked + .availability-toggle-box svg {
+  stroke: #fff;
+}
+
+.availability-note {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 16px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ============================================
+   SUBMIT SECTION
+   ============================================ */
+.submit-section {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 56px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #a30010 0%, #d4001a 100%);
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(163, 0, 16, 0.35);
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(163, 0, 16, 0.45);
+}
+
+.submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.form-disclaimer {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 24px;
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Message Styling */
+#formMessage {
+  border-radius: 16px !important;
+  font-weight: 500;
+  padding: 20px !important;
+  margin-top: 20px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .hiring-hero {
+    padding: 80px 20px 120px;
+  }
+
+  .hiring-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hiring-hero p {
+    font-size: 1.05rem;
+  }
+
+  .form-card {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .position-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .toggle-group {
+    flex-direction: column;
+  }
+
+  .toggle-pill-label {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .availability-wrapper {
+    padding: 16px;
+    overflow-x: auto;
+  }
+
+  .availability-grid-modern {
+    min-width: 320px;
+  }
+
+  .availability-row {
+    grid-template-columns: 65px repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .availability-header-cell {
+    font-size: 0.7rem;
+    letter-spacing: 0;
+  }
+
+  .availability-header-cell .full {
+    display: none;
+  }
+
+  .availability-header-cell .abbr {
+    display: inline;
+  }
+
+  .availability-header-cell small {
+    font-size: 0.55rem;
+  }
+
+  .availability-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .availability-toggle-box {
+    border-radius: 8px;
+  }
+
+  .availability-toggle-box svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .availability-day {
+    font-size: 0.75rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 18px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .position-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .position-card {
+    padding: 20px 12px;
+    width: auto;
+  }
+
+  .position-card-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .availability-row {
+    grid-template-columns: 55px repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .availability-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .availability-day {
+    font-size: 0.7rem;
+  }
+
+  .availability-header-cell {
+    font-size: 0.65rem;
+  }
+
+  .availability-header-cell small {
+    font-size: 0.5rem;
+  }
+}

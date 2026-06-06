@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#c2410f" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- SEO Meta Tags -->
+  <title>Breakfast Menu | Bobola's Nashua NH - Famous Homestyle Breakfast Served Until 2pm</title>
+  <meta name="description" content="Famous for homestyle breakfast in Nashua NH! Try our Belly Buster, pancakes, omelettes, benedicts & more. Served until 2pm at Bobola's Restaurant, 9 Simon St Nashua." />
+  <meta name="keywords" content="breakfast menu Nashua NH, Bobola's breakfast, homestyle breakfast, pancakes, omelettes, benedicts, breakfast restaurant Nashua, best breakfast Nashua" />
+  <meta name="author" content="Bobola's Restaurant" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bobolasnashua.com/bkmenu.html" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Breakfast Menu | Bobola's Nashua NH - Famous Homestyle Breakfast Served Until 2pm" />
+  <meta property="og:description" content="Famous for homestyle breakfast in Nashua NH! Try our Belly Buster, pancakes, omelettes, benedicts & more. Served until 2pm at Bobola's Restaurant, 9 Simon St Nashua." />
+  <meta property="og:type" content="restaurant.menu" />
+  <meta property="og:url" content="https://bobolasnashua.com/bkmenu.html" />
+  <meta property="og:image" content="https://bobolasnashua.com/images/Home/bobolatextlogo.png" />
+  <meta property="og:site_name" content="Bobola's Restaurant" />
+
+  <!-- Menu Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "name": "Bobola's Breakfast Menu",
+    "description": "Famous homestyle breakfast menu featuring Belly Buster, pancakes, omelettes, benedicts, and more. Served until 2pm.",
+    "url": "https://bobolasnashua.com/bkmenu.html",
+    "restaurant": {
+      "@type": "Restaurant",
+      "name": "Bobola's Restaurant",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 Simon Street",
+        "addressLocality": "Nashua",
+        "addressRegion": "NH",
+        "postalCode": "03060"
+      },
+      "telephone": "+1-603-577-1086"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <!-- New warm neighborhood design -->
+  <link rel="stylesheet" href="css/site.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .warm-btn { background:#c2410f; color:white; } .warm-btn:hover { background:#9f3410; }
+    .nav-link:hover { color:#c2410f; }
+    .menu-hero-new { background: linear-gradient(#f8f1e9, #f1e5d9); }
+  </style>
+</head>
+
+<body>
+  <!-- New warm header -->
+  <header class="bg-white border-b border-[#e8dcc8] sticky top-0 z-50">
+    <div class="max-w-[1280px] mx-auto px-5">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/chef-logo.jpg" alt="Bobola's" class="w-10 h-10 rounded-full object-cover" onerror="this.src='images/logo.jpg'">
+          <div class="leading-none">
+            <div class="font-bold text-2xl tracking-tighter">BOBOLA'S</div>
+            <div class="text-[9px] text-[#8a6f47] -mt-1">RESTAURANT</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex gap-6 text-sm font-medium items-center">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">Our Story</a>
+          <div class="relative group">
+            <span class="nav-link cursor-default flex items-center gap-1 text-[#c2410f]">Menus ▾</span>
+            <div class="absolute hidden group-hover:block pt-2">
+              <div class="bg-white border border-[#e8dcc8] rounded-xl shadow py-1 w-44 text-sm">
+                <a href="bkmenu.html" class="block px-4 py-1.5 hover:bg-[#f8f1e9] font-medium">Breakfast</a>
+                <a href="lunchmenu.html" class="block px-4 py-1.5 hover:bg-[#f8f1e9]">Lunch</a>
+                <a href="dinmenu.html" class="block px-4 py-1.5 hover:bg-[#f8f1e9]">Dinner</a>
+                <a href="specialmenu.html" class="block px-4 py-1.5 hover:bg-[#f8f1e9] border-t mt-1">Daily Specials</a>
+              </div>
+            </div>
+          </div>
+          <a href="photos.html" class="nav-link">Photos</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn text-sm px-4 py-1.5 rounded-full font-semibold hidden sm:inline-flex">Order Online</a>
+          <a href="tel:6035771086" class="text-sm hidden md:block px-2">(603) 577-1086</a>
+          <button id="mbt" class="md:hidden p-1.5"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="mm" class="hidden md:hidden border-b px-5 py-2 bg-white text-sm">
+    <a href="index.html" class="block py-1">Home</a>
+    <a href="about.html" class="block py-1">Our Story</a>
+    <a href="lunchmenu.html" class="block py-1">Lunch Menu</a>
+    <a href="dinmenu.html" class="block py-1">Dinner Menu</a>
+    <a href="photos.html" class="block py-1">Photo Gallery</a>
+    <a href="contact.html" class="block py-1">Contact</a>
+  </div>
+
+  <!-- mobile menu handled inline above -->
+
+  <main>
+    <!-- New simple hero -->
+    <section class="menu-hero-new border-b border-[#e8dcc8]">
+      <div class="max-w-[1280px] mx-auto px-5 py-9">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            <div class="text-xs uppercase tracking-widest text-[#c2410f] font-semibold">SERVED DAILY UNTIL 2PM</div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tighter section-title">Breakfast Menu</h1>
+            <p class="text-[#6b5540] mt-1 max-w-xs">The plates that made us a Nashua morning favorite. Big portions, cooked the way you like.</p>
+          </div>
+          <div class="hidden md:block">
+            <img src="images/food/country-breakfast.jpeg" class="w-52 h-32 object-cover rounded-2xl border border-[#e8dcc8] shadow" alt="Country breakfast at Bobola's">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <nav class="menu-tabs">
+      <div class="menu-tabs__container">
+        <a href="#favorites" class="menu-tab">Favorites</a>
+        <a href="#classics" class="menu-tab">Classics</a>
+        <a href="#omelettes" class="menu-tab">Omelettes</a>
+        <a href="#benedicts" class="menu-tab">Benedicts</a>
+        <a href="#sandwiches" class="menu-tab">Sandwiches</a>
+        <a href="#pancakes" class="menu-tab">Pancakes</a>
+        <a href="#french-toast" class="menu-tab">French Toast</a>
+        <a href="#waffles" class="menu-tab">Waffles</a>
+        <a href="#tots" class="menu-tab">Tots</a>
+        <a href="#sides" class="menu-tab">Sides</a>
+      </div>
+    </nav>
+
+    <!-- Favorites Section -->
+    <section id="favorites" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Favorites</h2>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>The Original Belly Buster</strong>
+              
+            </h3>
+            <p class="menu-item__description">Three eggs any style served with bacon, choice of sausage (patties or links), and your choice of pancakes or French toast</p>
+          </div>
+
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Cheeseburger Scrambler</strong>
+              
+            </h3>
+            <p class="menu-item__description">Three eggs scrambled with seasoned ground beef, sauteed onions, peppers, mushrooms, melted cheese, served with home fries and choice of toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>The Southerner</strong>
+              
+            </h3>
+            <p class="menu-item__description">Three eggs any style served over warm buttermilk biscuits, smothered in our house-made sausage gravy, with a side of home fries</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Steak Tips & Eggs</strong>
+              
+            </h3>
+            <p class="menu-item__description">Marinated sirloin steak tips cooked to your liking, served with two eggs any style, golden home fries, and choice of toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Chicken & Biscuits</strong>
+              
+            </h3>
+            <p class="menu-item__description">Panko crusted chicken served over a grilled biscuit & topped with our house-made sausage gravy. Served with two eggs & home fries</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Country Breakfast</strong>
+              
+            </h3>
+            <p class="menu-item__description">Three eggs served with bacon, country ham, sausage (links or patties), home fries & toast</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Classics Section -->
+    <section id="classics" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">The Classics</h2>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Corned Beef Hash & Eggs</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, corned beef hash, home fries, toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Two Eggs Any Style</strong>
+              
+            </h3>
+            <p class="menu-item__description">With home fries OR beans and choice of toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Bacon & Eggs</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two eggs any style with bacon, served with home fries OR beans and choice of toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Sausage & Eggs</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two eggs any style with choice of links or patties, served with home fries OR beans and choice of toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Polska Kielbasa & Eggs</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two eggs any style with kielbasa, served with home fries OR beans and choice of toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Ham & Eggs</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two eggs any style with ham, served with home fries OR beans and choice of toast</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Omelettes Section -->
+    <section id="omelettes" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Omelettes</h2>
+        <p class="menu-section__description">Three egg omelet, served with choice of toast & home fries OR beans.</p>
+        <div class="menu-section__note">
+          <p>Customize Your Way!</p>
+          <p>Transform any omelette into a delicious scramble at no extra charge</p>
+        </div>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Steak Bomb Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, shaved steak, onions, peppers, mushrooms, American cheese</p>
+          </div>
+
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Chef Special</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, bacon, ham, kielbasa, sausage, onions, peppers, mushrooms, spinach, tomatoes, broccoli and choice of cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Western Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, ham, onions, peppers, and cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Veggie Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, onions, peppers, mushrooms, tomatoes, and cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Ham & Cheese Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, ham, cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Bacon & Cheese Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, bacon, cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Sausage & Cheese Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, sausage, cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Kielbasa & Cheese Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, kielbasa, cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Cheese Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Irish Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">Corned beef hash served with choice of cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Meat Lovers</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, bacon, sausage, ham, and cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>The Garden Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">Peppers, onions, mushrooms, spinach, tomatoes, broccoli and your choice of cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Steak & Cheese</strong>
+              
+            </h3>
+            <p class="menu-item__description">Shaved steak with choice of cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Greek</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, spinach, onions, tomatoes, feta cheese, and olives</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Benny Omelet</strong>
+              
+            </h3>
+            <p class="menu-item__description">A play on a classic benny with your choice of diced ham or bacon and layered with hollandaise sauce</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Benedicts Section -->
+    <section id="benedicts" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Benedicts</h2>
+        <p class="menu-section__description">All benedicts are served with two poached eggs, on top of a toasted English muffin with Hollandaise sauce unless otherwise noted. Choice of home fries OR beans.</p>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Buffalo Chicken Benny</strong>
+              
+            </h3>
+            <p class="menu-item__description">Poached eggs, buffalo chicken, blue cheese dressing</p>
+          </div>
+
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Benny Skins</strong>
+              
+            </h3>
+            <p class="menu-item__description">Poached eggs, bacon, cheddar cheese, sour cream</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Traditional Benny</strong>
+              
+            </h3>
+            <p class="menu-item__description">With choice of Thick Cut Ham, Bacon, Sausage OR Kielbasa</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Irish Benny</strong>
+              
+            </h3>
+            <p class="menu-item__description">Served with corned beef hash</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Eggs Florentine Benny</strong>
+              
+            </h3>
+            <p class="menu-item__description">Fresh spinach & sliced tomatoes</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Steak Tip Benny</strong>
+              
+            </h3>
+            <p class="menu-item__description">Marinated sirloin tips cooked to your liking</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Country Benny</strong>
+              
+            </h3>
+            <p class="menu-item__description">Sausage patties on a grilled biscuit topped with sausage gravy</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Sweet Sriracha Benny</strong>
+              
+            </h3>
+            <p class="menu-item__description">Sweet Italian sausage over a grilled biscuit & topped with a Sriracha Hollandaise sauce</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Sandwiches Section -->
+    <section id="sandwiches" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Sandwiches</h2>
+        <p class="menu-section__description">Add home fries OR beans to any sandwich for $2.49.</p>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Breakfast Melt</strong>
+              
+            </h3>
+            <p class="menu-item__description">3 eggs, bacon, cheese, home fries</p>
+          </div>
+
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Clubbin' at Breakfast</strong>
+              
+            </h3>
+            <p class="menu-item__description">Triple-decker sandwich with three eggs, bacon, turkey, lettuce, tomato, and mayo on your choice of toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Meat, Egg & Cheese</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two eggs served on choice of toast, cheese & bacon, ham OR sausage</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Western Sandwich</strong>
+              
+            </h3>
+            <p class="menu-item__description">Eggs, ham, onions & peppers scrambled with cheese on choice of toast</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Croissant Sandwich</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two eggs, cheese & with choice of meat on grilled croissant</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>B.L.T</strong>
+              
+            </h3>
+            <p class="menu-item__description">The classic Bacon, lettuce, & tomatoes (No Egg $8.49 / Add Eggs $9.99)</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>The "Gate City" Sandwich</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two eggs with choice of cheese, bacon, ham OR sausage & home fries on a bulky roll</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Breakfast Burrito</strong>
+              
+            </h3>
+            <p class="menu-item__description">Scrambled eggs, home fries & Cheese with choice of bacon, ham, sausage OR vegetables in a warm tortilla. Served with a side of Salsa</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Hang-over Burger</strong>
+              
+            </h3>
+            <p class="menu-item__description">8oz of fresh ground beef, topped with an egg(any style), bacon, tots & all the fixings</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Pancakes Section -->
+    <section id="pancakes" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Buttermilk Pancakes</h2>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Blueberry Explosion</strong>
+              
+            </h3>
+            <p class="menu-item__description">Fresh blueberry-studded buttermilk pancakes topped with more blueberries and whipped cream</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Buttermilk</strong>
+              
+            </h3>
+            <p class="menu-item__description">Light and fluffy traditional buttermilk pancakes served with butter and syrup</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Reese's Peanut Butter</strong>
+              
+            </h3>
+            <p class="menu-item__description">Buttermilk pancakes loaded with Reese's peanut butter chips and chocolate chips, drizzled with peanut butter sauce</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>The 'Elvis'</strong>
+              
+            </h3>
+            <p class="menu-item__description">Buttermilk pancakes topped with fresh banana slices, crispy bacon, and warm peanut butter drizzle</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Banana Nut</strong>
+              
+            </h3>
+            <p class="menu-item__description">Buttermilk pancakes topped with fresh banana slices and toasted walnuts, drizzled with honey</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Sweet Apple Pie</strong>
+              
+            </h3>
+            <p class="menu-item__description">Buttermilk pancakes topped with warm cinnamon-spiced apple compote and whipped cream</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Almond Joy</strong>
+              
+            </h3>
+            <p class="menu-item__description">Buttermilk pancakes loaded with toasted almonds, coconut flakes, and chocolate chips, topped with whipped cream</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Nutella</strong>
+              
+            </h3>
+            <p class="menu-item__description">Buttermilk pancakes spread with rich Nutella hazelnut sauce and topped with fresh whipped cream</p>
+          </div>
+
+          <div class="add-ons">
+            <h3>Add-Ons</h3>
+            <ul>
+              <li>Blueberries</li>
+              <li>Strawberries</li>
+              <li>Apple Compote</li>
+              <li>Bananas</li>
+              <li>Chocolate Chips</li>
+              <li>Peanut Butter Chips</li>
+            </ul>
+          </div>
+
+          <div class="maple-syrup-upgrade">
+            <p>Enhance Your Experience! Treat yourself to pure Vermont maple syrup</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- French Toast Section -->
+    <section id="french-toast" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">French Toast</h2>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Cinnamon Toast Crunch French Toast</strong>
+              
+            </h3>
+            <p class="menu-item__description">Thick-cut bread coated in crushed Cinnamon Toast Crunch cereal, grilled golden brown and topped with fresh whipped cream</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Jumbo French Toast</strong>
+              
+            </h3>
+            <p class="menu-item__description">Thick-cut bread dipped in our egg and cinnamon batter, grilled to perfection</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Capt' Crunch</strong>
+              
+            </h3>
+            <p class="menu-item__description">Thick-cut bread dipped in our egg and cinnamon batter, coated in crushed Captain Crunch cereal, grilled golden brown and topped with fresh whipped cream</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Raisin</strong>
+              
+            </h3>
+            <p class="menu-item__description">Thick-cut cinnamon raisin bread dipped in our egg and cinnamon batter, grilled to perfection</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Coffee Roll French Toast</strong>
+              
+            </h3>
+            <p class="menu-item__description">Sweet coffee roll bread dipped in our egg and cinnamon batter, grilled golden brown and topped with fresh whipped cream</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>French Toast Sandwich</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two slices of French toast stuffed with two eggs any style, crispy bacon, and melted American cheese</p>
+          </div>
+
+          <div class="maple-syrup-upgrade">
+            <p>Enhance Your Experience! Treat yourself to pure Vermont maple syrup</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Waffles Section -->
+    <section id="waffles" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Belgian Waffles</h2>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Chicken & Waffles</strong>
+              
+            </h3>
+            <p class="menu-item__description">Hand-breaded crispy chicken tenders served over a golden Belgian waffle, drizzled with pure maple syrup</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Belgian Waffle</strong>
+              
+            </h3>
+            <p class="menu-item__description">Light and crispy traditional Belgian waffle served with butter and syrup</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Chocolate Chip Waffle</strong>
+              
+            </h3>
+            <p class="menu-item__description">Belgian waffle studded with chocolate chips, topped with fresh whipped cream and chocolate drizzle</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Banana Nut Waffle</strong>
+              
+            </h3>
+            <p class="menu-item__description">Belgian waffle topped with fresh banana slices and toasted walnuts, drizzled with honey</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Bacon Waffle</strong>
+              
+            </h3>
+            <p class="menu-item__description">Belgian waffle topped with crispy bacon bits and drizzled with pure maple syrup</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Nutella Waffle</strong>
+              
+            </h3>
+            <p class="menu-item__description">Belgian waffle spread with rich Nutella hazelnut sauce, topped with fresh whipped cream and your choice of strawberries or bananas</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Loaded Reese's Waffle</strong>
+              
+            </h3>
+            <p class="menu-item__description">Belgian waffle loaded with Reese's peanut butter chips and chocolate chips, topped with fresh whipped cream and peanut butter drizzle</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Waffle Sandwich</strong>
+              
+            </h3>
+            <p class="menu-item__description">Belgian waffle stuffed with three eggs any style, crispy bacon, and melted American cheese</p>
+          </div>
+
+          <div class="add-ons">
+            <h3>Add-ons Available</h3>
+            <ul>
+              <li>Blueberries $1.69</li>
+              <li>Strawberries $1.69</li>
+              <li>Apple Compote $1.69</li>
+              <li>Bananas $1.69</li>
+              <li>Chocolate Chips $1.49</li>
+              <li>Peanut Butter Chips $1.49</li>
+            </ul>
+          </div>
+
+          <div class="maple-syrup-upgrade">
+            <p>Enhance Your Experience! Treat yourself to pure Vermont maple syrup</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Tots Section -->
+    <section id="tots" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Tots</h2>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Tot Bowl</strong>
+              
+            </h3>
+            <p class="menu-item__description">Crispy tater tots topped with three eggs any style, crumbled bacon, sausage, melted cheese, and our house-made sausage gravy</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Side of Tots</strong>
+              
+            </h3>
+            <p class="menu-item__description">Golden crispy tater tots served hot and seasoned to perfection</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Loaded Tots</strong>
+              
+            </h3>
+            <p class="menu-item__description">Crispy tots topped with melted cheese, bacon bits, sour cream, and fresh chives</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Bacon Cheddar Tots</strong>
+              
+            </h3>
+            <p class="menu-item__description">Crispy tots topped with melted cheddar cheese and crumbled bacon</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Veggie Tots</strong>
+              
+            </h3>
+            <p class="menu-item__description">Crispy tots topped with sauteed peppers, onions, mushrooms, and melted cheese</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Sides Section -->
+    <section id="sides" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Sides</h2>
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <h3 class="menu-item__title">
+              <strong>Biscuits(2) and Gravy</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two warm buttermilk biscuits smothered in our house-made sausage gravy</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Bacon</strong>
+              
+            </h3>
+            <p class="menu-item__description">Four strips of crispy bacon</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Sausage (Links or Patties)</strong>
+              
+            </h3>
+            <p class="menu-item__description">Choice of four sausage links or two sausage patties</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Corned Beef Hash</strong>
+              
+            </h3>
+            <p class="menu-item__description">House-made corned beef hash, grilled until crispy</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Country Ham</strong>
+              
+            </h3>
+            <p class="menu-item__description">Thick-cut grilled country ham</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Polska Kielbasa</strong>
+              
+            </h3>
+            <p class="menu-item__description">Grilled Polish kielbasa sausage</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Bagel with Cream Cheese</strong>
+              
+            </h3>
+            <p class="menu-item__description">Toasted bagel served with whipped cream cheese</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Toast</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two slices of your choice of bread, toasted and buttered</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Sausage Gravy</strong>
+              
+            </h3>
+            <p class="menu-item__description">Our house-made creamy sausage gravy</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Hollandaise Sauce</strong>
+              
+            </h3>
+            <p class="menu-item__description">Classic creamy hollandaise sauce</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Baked Beans</strong>
+              
+            </h3>
+            <p class="menu-item__description">Traditional New England-style baked beans</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Coffee Roll</strong>
+              
+            </h3>
+            <p class="menu-item__description">Fresh-baked sweet coffee roll</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Home Fries</strong>
+              
+            </h3>
+            <p class="menu-item__description">Seasoned and grilled diced potatoes</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Assorted Muffins</strong>
+              
+            </h3>
+            <p class="menu-item__description">Fresh-baked muffin of the day</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Buttermilk Biscuits</strong>
+              
+            </h3>
+            <p class="menu-item__description">Two warm buttermilk biscuits</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+
+    <!-- Choice of Toast Section -->
+    <section class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Choice of Toast</h2>
+        <div class="menu-section__note">
+          <p>Available Breads</p>
+          <p>White, Wheat, Marble Rye, Sourdough, Cinnamon Raisin OR English Muffin. Substitute for bagel or biscuit (grilled or toasted).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beverages Section -->
+    <section id="beverages" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Beverages</h2>
+        <div class="menu-section__items">
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Coffee</strong>
+              
+            </h3>
+            <p class="menu-item__description">Regular or Decaf</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Hot Tea</strong>
+              
+            </h3>
+            <p class="menu-item__description">Assorted varieties available</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Juice</strong>
+              
+            </h3>
+            <p class="menu-item__description">Orange, Apple, Cranberry, Tomato</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Milk</strong>
+              
+            </h3>
+            <p class="menu-item__description">Regular or Chocolate</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Soft Drinks</strong>
+              
+            </h3>
+            <p class="menu-item__description">Coke, Diet Coke, Sprite, Root Beer</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Hot Chocolate</strong>
+              
+            </h3>
+            <p class="menu-item__description">With whipped cream</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="menu-item__title">
+              <strong>Iced Tea</strong>
+              
+            </h3>
+            <p class="menu-item__description">Sweet, Unsweetened, Raspberry or Green</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="footer-modern">
+    <div class="footer-modern__container">
+      <div class="footer-modern__grid">
+        <div class="footer-modern__brand">
+          <a href="index.html" class="footer-modern__logo">
+            <img src="images/chef-logo.jpg" alt="Bobola's Restaurant" loading="lazy">
+            <div class="footer-modern__logo-text">
+              <span class="footer-modern__logo-primary">BOBOLA'S</span>
+              <span class="footer-modern__logo-secondary">Restaurant</span>
+            </div>
+          </a>
+          <p class="footer-modern__tagline">A little taste of home. Family-owned and proudly serving Nashua, NH since 2018.</p>
+          <div class="footer-modern__social">
+            <a href="https://www.facebook.com/BobolasRestaurant/" target="_blank" class="footer-modern__social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-modern__column">
+          <h3>Quick Links</h3>
+          <ul class="footer-modern__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="hiring.html">Join Our Team</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-modern__column">
+          <h3>Our Menus</h3>
+          <ul class="footer-modern__links">
+            <li><a href="bkmenu.html">Breakfast</a></li>
+            <li><a href="lunchmenu.html">Lunch</a></li>
+            <li><a href="dinmenu.html">Dinner</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-modern__column">
+          <h3>Contact Us</h3>
+          <div class="footer-modern__contact">
+            <div class="footer-modern__contact-item">
+              <div class="footer-modern__contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="footer-modern__contact-text">
+                <span class="footer-modern__contact-label">Address</span>
+                <span class="footer-modern__contact-value">9 Simon St, Nashua, NH 03060</span>
+              </div>
+            </div>
+            <div class="footer-modern__contact-item">
+              <div class="footer-modern__contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="footer-modern__contact-text">
+                <span class="footer-modern__contact-label">Phone</span>
+                <span class="footer-modern__contact-value"><a href="tel:6035771086">(603) 577-1086</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-modern__bottom">
+        <p class="footer-modern__copyright">&copy; 2026 Bobola's Restaurant. All Rights Reserved.</p>
+        <div class="footer-modern__bottom-links">
+          <a href="employee.html">Employee Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.header-modern__mobile-toggle');
+    const mobileNav = document.querySelector('.mobile-nav-overlay');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-nav-overlay a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header-modern');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 140;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Active tab highlighting on scroll
+    const sections = document.querySelectorAll('.menu-section[id]');
+    const tabs = document.querySelectorAll('.menu-tab');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('href') === '#' + current) {
+          tab.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <!-- New simple footer + mobile script -->
+  <footer class="bg-[#3f2e1e] text-[#e8dcc8] mt-12 py-7 text-xs">
+    <div class="max-w-[1280px] mx-auto px-5 flex flex-col md:flex-row gap-y-3 items-center justify-between">
+      <div>© Bobola's • 9 Simon St, Nashua NH • (603) 577-1086</div>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="photos.html" class="hover:text-white">Photos</a>
+        <a href="about.html" class="hover:text-white">Our Story</a>
+        <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="hover:text-white">Order Online</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mbt = document.getElementById('mbt');
+    const mm = document.getElementById('mm');
+    if (mbt && mm) mbt.onclick = () => mm.classList.toggle('hidden');
+    
+    // Keep old tab/scroll JS if present, else ignore
+  </script>
+</body>
+</html>
+

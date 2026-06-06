@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery | Bobola's Restaurant Nashua NH</title>
+  <meta name="description" content="Real photos of the food we serve at Bobola's in Nashua. See the generous portions and homestyle cooking that keep our neighbors coming back." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    .section-title { font-family: 'Playfair Display', Georgia, serif; }
+    .warm-btn { background-color: #c2410f; color: white; transition: all 0.1s ease; }
+    .warm-btn:hover { background-color: #9f3410; }
+    .food-thumb { transition: transform .2s ease, box-shadow .2s ease; cursor: zoom-in; }
+    .food-thumb:hover { transform: scale(1.015); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.15); }
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999; display: none; align-items: center; justify-content: center; padding: 1rem; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-height: 92vh; max-width: 96vw; border-radius: 12px; box-shadow: 0 25px 50px -12px rgb(0 0 0); }
+  </style>
+</head>
+<body class="bg-[#f8f1e9] text-[#3f2e1e]">
+  <!-- Same header style as index -->
+  <header class="bg-white border-b border-[#e8dcc8] sticky top-0 z-50">
+    <div class="max-w-[1280px] mx-auto px-5">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="images/chef-logo.jpg" alt="Bobola's" class="w-11 h-11 rounded-full object-cover ring-2 ring-[#f8f1e9]" onerror="this.src='images/logo.jpg'">
+          <div>
+            <div class="font-bold text-2xl tracking-tighter leading-none">BOBOLA'S</div>
+            <div class="text-[10px] text-[#8a6f47] -mt-1 font-medium">RESTAURANT</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+          <a href="index.html" class="hover:text-[#c2410f]">Home</a>
+          <a href="about.html" class="hover:text-[#c2410f]">Our Story</a>
+          <a href="bkmenu.html" class="hover:text-[#c2410f]">Menus</a>
+          <a href="photos.html" class="text-[#c2410f] font-semibold">Photos</a>
+          <a href="contact.html" class="hover:text-[#c2410f]">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn px-5 py-2 rounded-full text-sm font-semibold hidden sm:inline-flex items-center gap-2">Order Online</a>
+          <a href="tel:6035771086" class="text-sm hidden md:inline">(603) 577-1086</a>
+          <button id="mobile-btn" class="md:hidden p-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="hidden md:hidden border-b bg-white">
+    <div class="max-w-[1280px] mx-auto px-5 py-3 text-sm flex flex-col gap-1">
+      <a href="index.html" class="py-1">Home</a>
+      <a href="about.html" class="py-1">Our Story</a>
+      <a href="bkmenu.html" class="py-1">Breakfast</a>
+      <a href="lunchmenu.html" class="py-1">Lunch</a>
+      <a href="dinmenu.html" class="py-1">Dinner</a>
+      <a href="contact.html" class="py-1">Contact</a>
+      <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn mt-2 text-center py-2 rounded-full">Order Online</a>
+    </div>
+  </div>
+
+  <main class="max-w-[1280px] mx-auto px-5 pt-10 pb-16">
+    <div class="max-w-2xl">
+      <div class="uppercase text-xs tracking-[2px] text-[#c2410f] font-semibold">REAL FOOD. NO FILTERS.</div>
+      <h1 class="section-title text-5xl tracking-tighter font-bold mt-1">What we actually put on the table.</h1>
+      <p class="mt-3 text-lg text-[#6b5540]">These are the plates that leave our kitchen every day. Big portions. Honest food. The kind of stuff that makes you want to come back tomorrow.</p>
+    </div>
+
+    <!-- Gallery grid -->
+    <div id="gallery" class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+      <!-- Populated by JS below for easy maintenance -->
+    </div>
+
+    <p class="text-center text-xs text-[#8a6f47] mt-8">We cook with real ingredients and we plate it like we’d serve it to our own family. Come see for yourself.</p>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <div onclick="event.stopImmediatePropagation()" class="relative">
+      <img id="lightbox-img" alt="Enlarged food photo from Bobola's">
+      <button onclick="closeLightbox()" class="absolute -top-3 -right-3 bg-white text-black w-9 h-9 rounded-full flex items-center justify-center shadow text-xl leading-none">&times;</button>
+    </div>
+  </div>
+
+  <footer class="bg-[#3f2e1e] text-[#e8dcc8] py-8 text-xs">
+    <div class="max-w-[1280px] mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div>© Bobola's Restaurant • 9 Simon St, Nashua NH</div>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="about.html" class="hover:text-white">Our Story</a>
+        <a href="contact.html" class="hover:text-white">Visit Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Food images list - using all new images + a couple safe fallbacks
+    const foodImages = [
+      { file: "country-breakfast.jpeg", label: "Country Breakfast" },
+      { file: "ham-benedict2.jpeg", label: "Ham Benedict" },
+      { file: "ham-benedict3.jpeg", label: "Benedict Plated" },
+      { file: "french-toast2.jpeg", label: "French Toast" },
+      { file: "loaded-reeses-waffle.jpeg", label: "Loaded Reese's Waffle" },
+      { file: "chocolate-chip-pc2.jpeg", label: "Chocolate Chip Pancakes" },
+      { file: "coffee-roll.jpeg", label: "Fresh Coffee Roll" },
+      { file: "American-Chop-Suey.jpeg", label: "American Chop Suey" },
+      { file: "Buffalo-Fingers.jpeg", label: "Buffalo Chicken Fingers" },
+      { file: "1777556407255-oyeaii.jpeg", label: "Fresh Off the Grill" },
+      { file: "1777556838876-1pls12.jpeg", label: "Signature Plate" },
+      { file: "1777556838876-1prf9w.jpeg", label: "House Favorite" },
+      { file: "1777556838876-27zsbx.jpeg", label: "Made Today" },
+      { file: "1777556838876-5eq2qy.jpeg", label: "Comfort Classic" },
+      { file: "1777556838876-b7xume.jpeg", label: "Big Portion" },
+      { file: "1777556838876-bt6ihl.jpeg", label: "Seafood Night" },
+      { file: "1777556838876-cfifkn.jpeg", label: "Pasta Night" },
+      { file: "1777556838876-hbacka.jpeg", label: "Dinner Special" },
+      { file: "1777556838876-hm4oht.jpeg", label: "From the Kitchen" },
+      { file: "1777556838876-qa1zjn.jpeg", label: "Hearty & Hot" },
+      { file: "1777556838876-ukh5y3.jpeg", label: "Breakfast Done Right" },
+      { file: "1777556838876-wqwq9v.jpeg", label: "Daily Plate" },
+      { file: "1777556838876-y0n4ba.jpeg", label: "Lunch Special" },
+      { file: "1777556838876-y64k2i.jpeg", label: "Stacked High" },
+      { file: "1777556838877-530bmh.jpeg", label: "Golden & Crispy" },
+      { file: "1777556838877-7vcve5.jpeg", label: "Fresh Catch" },
+      { file: "1777556838877-8t8utt.jpeg", label: "Beautifully Done" },
+      { file: "1777556838877-9at977.jpeg", label: "Family Style" },
+      { file: "1777556838877-i96ve1.jpeg", label: "Eggs Your Way" },
+      { file: "1777556838877-igsofs.jpeg", label: "Hot & Fresh" },
+      { file: "1777556838877-iqpje0.jpeg", label: "Classic Diner" },
+      { file: "1777556838877-jr0nqh.jpeg", label: "The Works" },
+      { file: "1777556838877-kfc14w.jpeg", label: "Sauce & All" },
+      { file: "1777556838877-n6lwju.jpeg", label: "Tender & Juicy" },
+      { file: "1777556838877-nqilid.jpeg", label: "Weekend Brunch" },
+      { file: "1777556838877-o904hk.jpeg", label: "Our Best Seller" },
+      { file: "1777556838877-oic15f.jpeg", label: "Simple & Good" },
+      { file: "1777556838877-ql5epj.jpeg", label: "Loaded Plate" },
+      { file: "1777556838877-suziyh.jpeg", label: "Chef's Pick" },
+      { file: "1777556838877-vlxbbq.jpeg", label: "Ready to Serve" },
+      { file: "1777556838877-xqarsr.jpeg", label: "Come Hungry" }
+    ];
+
+    function renderGallery() {
+      const container = document.getElementById('gallery');
+      container.innerHTML = '';
+      
+      foodImages.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'relative rounded-2xl overflow-hidden border border-[#e8dcc8] shadow-sm bg-white aspect-square group';
+        div.innerHTML = `
+          <img src="images/food/${item.file}" alt="${item.label} at Bobola's Restaurant" 
+               class="food-thumb w-full h-full object-cover" loading="lazy"
+               onerror="this.src='images/food/1777556838877-8t8utt.jpeg'; this.style.opacity='0.6'">
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-3">
+            <div class="text-white text-sm font-medium tracking-tight">${item.label}</div>
+          </div>
+          <div class="absolute top-2 right-2 bg-white/90 text-[10px] px-1.5 py-0.5 rounded font-mono text-[#3f2e1e] opacity-0 group-hover:opacity-100 transition">VIEW</div>
+        `;
+        div.onclick = () => openLightbox(`images/food/${item.file}`, item.label);
+        container.appendChild(div);
+      });
+    }
+
+    let currentLightbox = null;
+    function openLightbox(src, alt) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      img.alt = alt || 'Food from Bobola\'s';
+      lb.classList.add('active');
+      currentLightbox = lb;
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    // Close on escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && currentLightbox && currentLightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+
+    // Mobile menu
+    const mb = document.getElementById('mobile-btn');
+    const mm = document.getElementById('mobile-menu');
+    if (mb && mm) mb.onclick = () => mm.classList.toggle('hidden');
+
+    // Init
+    renderGallery();
+    
+    // Tailwind
+    console.log('%c[Bobola\'s] Photo gallery ready with ' + foodImages.length + ' images.', 'color:#8a6f47');
+  </script>
+</body>
+</html>

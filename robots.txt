@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bobolasrestaurant.com/sitemap.xml
+
+# Allow all search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow access to admin/employee areas
+Disallow: /employee.html
+Disallow: /older/
+
+# Allow access to all public content
+Allow: /images/
+Allow: /css/
+Allow: /js/ 

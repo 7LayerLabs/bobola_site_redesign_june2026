@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Bobola's Restaurant - Family Owned in Nashua NH</title>
+  <meta name="description" content="The real story behind Bobola's in Nashua. Family-run, generous portions, neighborhood comfort food since 2018. Honoring Frank Bobola's legacy the right way." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    .section-title { font-family: 'Playfair Display', Georgia, serif; }
+    .warm-btn { background-color: #c2410f; color: white; }
+    .warm-btn:hover { background-color: #9f3410; }
+    .story-p { font-size: 15.5px; line-height: 1.75; color: #5c4632; }
+  </style>
+</head>
+<body class="bg-[#f8f1e9] text-[#3f2e1e]">
+  <header class="bg-white border-b border-[#e8dcc8] sticky top-0 z-50">
+    <div class="max-w-[1280px] mx-auto px-5">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="images/chef-logo.jpg" alt="Bobola's Chef" class="w-11 h-11 rounded-full object-cover ring-2 ring-[#f8f1e9]" onerror="this.src='images/logo.jpg'">
+          <div>
+            <div class="font-bold text-2xl tracking-tighter leading-none">BOBOLA'S</div>
+            <div class="text-[10px] text-[#8a6f47] -mt-1 font-medium">RESTAURANT</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+          <a href="index.html" class="hover:text-[#c2410f]">Home</a>
+          <a href="about.html" class="text-[#c2410f] font-semibold">Our Story</a>
+          <a href="photos.html" class="hover:text-[#c2410f]">Photos</a>
+          <a href="contact.html" class="hover:text-[#c2410f]">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn px-5 py-2 rounded-full text-sm font-semibold">Order Online</a>
+          <a href="tel:6035771086" class="text-sm px-3">(603) 577-1086</a>
+        </div>
+        <button id="mbtn" class="md:hidden p-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mmenu" class="hidden md:hidden border-b bg-white px-5 py-3 text-sm">
+    <a href="index.html" class="block py-1">Home</a>
+    <a href="bkmenu.html" class="block py-1">Menus</a>
+    <a href="photos.html" class="block py-1">Gallery</a>
+    <a href="contact.html" class="block py-1">Contact</a>
+    <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="block mt-2 warm-btn text-center py-2 rounded-full text-white">Order Online</a>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="border-b border-[#e8dcc8] bg-white">
+      <div class="max-w-[1280px] mx-auto px-5 py-12 md:py-16">
+        <div class="max-w-2xl">
+          <div class="inline px-3 py-1 rounded-full bg-[#f8f1e9] text-xs font-semibold tracking-wider text-[#c2410f]">FAMILY RUN • NEIGHBORHOOD OWNED</div>
+          <h1 class="section-title text-5xl md:text-6xl tracking-tighter font-bold mt-3 leading-none">We're not the fanciest place in Nashua.<br>And we're proud of that.</h1>
+          <p class="mt-5 text-xl text-[#6b5540]">We put our money where it matters — on your plate. Big portions, honest food, and a seat at the table for anyone who walks through the door.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frank Legacy -->
+    <section class="max-w-[1280px] mx-auto px-5 py-12 md:py-16">
+      <div class="grid md:grid-cols-12 gap-x-8 gap-y-8 items-start">
+        <div class="md:col-span-5">
+          <div class="sticky top-20">
+            <img src="images/frankbobola.jpg" alt="Frank Bobola, founder" class="rounded-2xl shadow border border-[#e8dcc8] w-full">
+            <div class="text-xs text-[#8a6f47] mt-2 pl-1">Frank Bobola — the heart behind every plate we serve.</div>
+          </div>
+        </div>
+        
+        <div class="md:col-span-7">
+          <div class="uppercase text-xs tracking-[1.5px] text-[#c2410f] font-semibold mb-2">THE BOBOLA LEGACY</div>
+          <h2 class="section-title text-4xl tracking-tighter font-bold mb-5">It started with a 13-year-old dishwasher who fell in love with the work.</h2>
+          
+          <div class="story-p space-y-5">
+            <p>Frank Bobola started in the restaurant business at 13 as a dishwasher. He worked his way up to chef at places like The Waterwheel, Branding Iron Steak House, The Colonial Inn, and The Lakeside. In the mid-80s he opened Big Belly Deli in Lowell, which grew into Bobola's Big Belly Deli &amp; Restaurant on Gorham Street — a true neighborhood spot.</p>
+            
+            <p>In 2018 the family opened this location at 9 Simon Street in Nashua. Frank passed before he got to see it open, but everything we do here still carries his belief that good food and good people belong together.</p>
+          </div>
+
+          <div class="mt-8 p-5 bg-white border border-[#e8dcc8] rounded-2xl text-sm">
+            <strong class="block mb-1">What Frank taught us:</strong> 
+            Treat people right. Give them more than they expect. Keep the recipes simple and the portions generous. The rest takes care of itself.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Neighborhood Truth -->
+    <section class="bg-white border-y border-[#e8dcc8] py-12">
+      <div class="max-w-[1280px] mx-auto px-5">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="section-title text-3xl tracking-tight font-bold">This is what we actually believe.</h2>
+        </div>
+        
+        <div class="mt-9 grid md:grid-cols-3 gap-5">
+          <div class="border border-[#e8dcc8] bg-[#f8f1e9] rounded-2xl p-6">
+            <div class="w-12 h-12 rounded-xl bg-white border border-[#e8dcc8] flex items-center justify-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="13" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 13a3 3 0 016 0"/></svg>
+            </div>
+            <div class="font-semibold text-lg mb-2">We put the money in the portions.</div>
+            <p class="text-sm text-[#6b5540]">You won't find tiny plates with microgreens here. You get a real meal that fills you up and makes you want to come back. That's how we were raised.</p>
+          </div>
+          <div class="border border-[#e8dcc8] bg-[#f8f1e9] rounded-2xl p-6">
+            <div class="w-12 h-12 rounded-xl bg-white border border-[#e8dcc8] flex items-center justify-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V6.5a1.5 1.5 0 013 0V10m0-.5V5a1.5 1.5 0 013 0v5m0-.5V6.5a1.5 1.5 0 013 0V13a6 6 0 01-6 6h-1.2a4 4 0 01-3-1.4l-3-3.5a1.5 1.5 0 012.2-2L7 13.5"/></svg>
+            </div>
+            <div class="font-semibold text-lg mb-2">Come as you are.</div>
+            <p class="text-sm text-[#6b5540]">Work boots still dusty? Kids in tow? Just want a quiet cup of coffee? You're our people. No dress code, no attitude. Just a warm hello and a full plate.</p>
+          </div>
+          <div class="border border-[#e8dcc8] bg-[#f8f1e9] rounded-2xl p-6">
+            <div class="w-12 h-12 rounded-xl bg-white border border-[#e8dcc8] flex items-center justify-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11.5L12 4l9 7.5M5 10v9a1 1 0 001 1h12a1 1 0 001-1v-9M10 20v-5h4v5"/></svg>
+            </div>
+            <div class="font-semibold text-lg mb-2">We're the neighborhood place.</div>
+            <p class="text-sm text-[#6b5540]">Not trying to be the "it" spot. We're the place you bring your cousin when they're in town, the place you go after a long week because you know it'll be good and the people will remember your name.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline simplified -->
+    <section class="max-w-[1280px] mx-auto px-5 py-12 md:py-16">
+      <div class="mb-8">
+        <div class="uppercase tracking-widest text-xs text-[#c2410f]">OUR JOURNEY</div>
+        <h3 class="section-title text-3xl font-bold tracking-tight mt-1">From dishwasher to Nashua staple.</h3>
+      </div>
+      
+      <div class="space-y-4 text-sm">
+        <div class="flex gap-4 border-l-2 border-[#e8dcc8] pl-5 py-1">
+          <div class="w-16 shrink-0 font-mono text-xs pt-0.5 text-[#8a6f47]">1970s</div>
+          <div>Frank starts as a dishwasher at 13. Discovers his life's work.</div>
+        </div>
+        <div class="flex gap-4 border-l-2 border-[#e8dcc8] pl-5 py-1">
+          <div class="w-16 shrink-0 font-mono text-xs pt-0.5 text-[#8a6f47]">1980s</div>
+          <div>Opens Big Belly Deli on Westford Street in Lowell. Becomes a neighborhood institution.</div>
+        </div>
+        <div class="flex gap-4 border-l-2 border-[#e8dcc8] pl-5 py-1">
+          <div class="w-16 shrink-0 font-mono text-xs pt-0.5 text-[#8a6f47]">2018</div>
+          <div>Bobola's opens at 9 Simon Street, Nashua. The family carries the legacy forward.</div>
+        </div>
+        <div class="flex gap-4 border-l-2 border-[#e8dcc8] pl-5 py-1">
+          <div class="w-16 shrink-0 font-mono text-xs pt-0.5 text-[#8a6f47]">TODAY</div>
+          <div>Still family-run. Still generous. Still the place where you can count on a good meal and a friendly face.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Logo Note (adapted for new chef logo) -->
+    <section class="max-w-[1280px] mx-auto px-5 pb-14">
+      <div class="bg-white border border-[#e8dcc8] rounded-3xl p-8 md:p-10">
+        <div class="md:flex gap-8 items-center">
+          <div class="md:w-5/12 mb-6 md:mb-0">
+            <img src="images/chef-logo.jpg" alt="Our chef mascot logo" class="w-48 mx-auto md:mx-0 rounded-2xl">
+          </div>
+          <div class="md:w-7/12">
+            <h3 class="font-semibold text-xl mb-3">About the chef on our logo</h3>
+            <div class="text-sm text-[#5c4632] leading-relaxed">
+              The original logo was drawn by Frank's daughter Kimberly years ago — a little cartoon that became the face of the place. It was warm, a little quirky, and felt like family. <br><br>
+              We've given him a fresh coat of paint for this chapter, but the spirit is the same: friendly, a little fun, always welcoming. He reminds us why we do this — to make people feel at home the second they walk in.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="bg-[#3f2e1e] text-[#f8f1e9] py-10">
+      <div class="max-w-[1280px] mx-auto px-5 text-center">
+        <div class="text-sm tracking-widest opacity-75">NO RESERVATIONS NEEDED</div>
+        <div class="text-2xl md:text-3xl font-semibold tracking-tight mt-1 mb-5">Just come hungry. We'll take care of the rest.</div>
+        <div class="flex justify-center gap-3">
+          <a href="contact.html" class="px-6 py-3 rounded-full border border-[#e8dcc8] text-sm hover:bg-white/10">See hours &amp; location</a>
+          <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn px-6 py-3 rounded-full text-sm font-semibold">Order for pickup</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#3f2e1e] text-[#e8dcc8]/80 py-6 text-xs">
+    <div class="max-w-[1280px] mx-auto px-5 flex flex-wrap gap-x-4 gap-y-1 items-center justify-between">
+      <div>© 2026 Bobola's Restaurant • 9 Simon St, Nashua, NH 03060</div>
+      <div class="flex gap-x-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="photos.html" class="hover:text-white">Gallery</a>
+        <a href="hiring.html" class="hover:text-white">Join the team</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mbtn = document.getElementById('mbtn');
+    const mm = document.getElementById('mmenu');
+    if (mbtn && mm) mbtn.onclick = () => mm.classList.toggle('hidden');
+  </script>
+</body>
+</html>

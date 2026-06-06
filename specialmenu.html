@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Specials - Bobola's Restaurant | Nashua NH</title>
+  <meta name="description" content="Check out today's dinner specials at Bobola's Restaurant in Nashua, NH. Fresh appetizers, entrees, and weekly featured items made from scratch.">
+  <meta name="theme-color" content="#c2410f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/site.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.warm-btn{background:#c2410f;color:#fff}.nav-link:hover{color:#c2410f}</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "name": "Bobola's Daily Specials Menu",
+    "description": "Fresh daily specials featuring appetizers and entrees",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Appetizers",
+        "description": "Daily special starters"
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Entrees",
+        "description": "Daily special main courses"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Modern Header -->
+  <header class="header-modern">
+    <div class="header-modern__container">
+      <a href="index" class="header-modern__logo">
+        <img src="images/chef-logo.jpg" alt="Bobola's Restaurant">
+        <div class="header-modern__logo-text">
+          <span class="header-modern__logo-primary">BOBOLA'S</span>
+          <span class="header-modern__logo-secondary">Restaurant</span>
+        </div>
+      </a>
+
+      <nav class="header-modern__nav">
+        <ul class="header-modern__menu">
+          <li><a href="index" class="header-modern__link">Home</a></li>
+          <li><a href="about" class="header-modern__link">About</a></li>
+          <li class="header-modern__dropdown">
+            <a href="#" class="header-modern__link header-modern__link--active">
+              Menus
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <ul class="header-modern__dropdown-menu">
+              <li><a href="bkmenu">Breakfast</a></li>
+              <li><a href="lunchmenu">Lunch</a></li>
+              <li><a href="dinmenu">Dinner</a></li>
+              <li><a href="specialmenu">Daily Specials</a></li>
+            </ul>
+          </li>
+          <li><a href="hiring" class="header-modern__link">Join Our Team</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-modern__actions">
+        <a href="tel:6035771086" class="header-modern__phone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <span>(603) 577-1086</span>
+        </a>
+        <a href="https://order.toasttab.com/online/bobolas" class="header-modern__cta" target="_blank" aria-label="Order Online">
+          Order Online
+        </a>
+        <button class="header-modern__mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay">
+    <div class="mobile-nav-overlay__content">
+      <nav class="mobile-nav-overlay__menu">
+        <a href="index" class="mobile-nav-overlay__link">Home</a>
+        <a href="about" class="mobile-nav-overlay__link">About</a>
+        <div class="mobile-nav-overlay__section">
+          <span class="mobile-nav-overlay__section-title">Menus</span>
+          <a href="bkmenu" class="mobile-nav-overlay__sublink">Breakfast</a>
+          <a href="lunchmenu" class="mobile-nav-overlay__sublink">Lunch</a>
+          <a href="dinmenu" class="mobile-nav-overlay__sublink">Dinner</a>
+          <a href="specialmenu" class="mobile-nav-overlay__sublink mobile-nav-overlay__sublink--active">Daily Specials</a>
+        </div>
+        <a href="hiring" class="mobile-nav-overlay__link">Join Our Team</a>
+      </nav>
+      <div class="mobile-nav-overlay__actions">
+        <a href="tel:6035771086" class="mobile-nav-overlay__phone">(603) 577-1086</a>
+        <a href="https://order.toasttab.com/online/bobolas" class="mobile-nav-overlay__cta" target="_blank">Order Online</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+      <div class="menu-hero__content">
+        <span class="menu-hero__badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          Fresh Daily Specials
+        </span>
+        <h1>
+          Today's Specials
+          <span>Made Fresh, Made Special</span>
+        </h1>
+        <p>Our chef creates new dishes daily using the freshest ingredients. Check back often to see what's cooking!</p>
+      </div>
+    </section>
+
+    <!-- Menu Tabs -->
+    <nav class="menu-tabs">
+      <div class="menu-tabs__container">
+        <a href="#appetizers" class="menu-tab active">Appetizers</a>
+        <a href="#entrees" class="menu-tab">Entrees</a>
+      </div>
+    </nav>
+
+    <!-- Appetizers Section -->
+    <section id="appetizers" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Appetizers</h2>
+        <p class="menu-section__description">Start your meal with something special.</p>
+
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <p class="menu-item__title">
+              <strong>Stuffed Mushrooms with Crabmeat Stuffing</strong>
+            </p>
+            <p class="menu-item__description">Button mushrooms filled with a blend of our house-made cracker stuffing and crabmeat stuffing.</p>
+          </div>
+
+          <div class="menu-item">
+            <p class="menu-item__title">
+              <strong>Fried Broccoli</strong>
+            </p>
+            <p class="menu-item__description">Crispy, golden fried broccoli florets served with your choice of ranch dressing or our house-made cheese sauce.</p>
+          </div>
+
+          <!-- Tossed Fingers Feature -->
+          <div class="menu-item menu-item--featured">
+            <p class="menu-item__title">
+              <strong>Tossed Fingers</strong>
+            </p>
+            <p class="menu-item__description">Our crispy chicken fingers tossed in your choice of sauce. Ask your server for this week's featured flavor!</p>
+            <div class="maple-syrup-upgrade" style="margin-top: 12px;">
+              <p>Flavor of the Week: Hickory and Brown Sugar</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+          </svg>
+          Back to Top
+        </a>
+      </div>
+    </section>
+
+    <!-- Entrees Section -->
+    <section id="entrees" class="menu-section">
+      <div class="menu-section__container">
+        <h2 class="menu-section__title">Entrees</h2>
+        <p class="menu-section__description">Today's featured main courses, served with your choice of sides.</p>
+
+        <div class="menu-section__items">
+          <div class="menu-item menu-item--featured">
+            <p class="menu-item__title">
+              <strong>Garlic Butter Haddock with Seafood Stuffing</strong>
+            </p>
+            <p class="menu-item__description">Atlantic haddock baked in garlic butter, topped with our house-made seafood stuffing and seasoned crumbs.</p>
+          </div>
+
+          <div class="menu-item">
+            <p class="menu-item__title">
+              <strong>Stuffed Chicken Breast</strong>
+            </p>
+            <p class="menu-item__description">Tender chicken breast filled with house-made stuffing, topped with rich chicken gravy.</p>
+          </div>
+
+          <div class="menu-item">
+            <p class="menu-item__title">
+              <strong>Chicken Stir Fry over Rice</strong>
+            </p>
+            <p class="menu-item__description">Lightly fried chicken tossed in savory teriyaki sauce with mushrooms, peppers, onions, broccoli, and snow peas. Served over a bed of steamed rice.</p>
+          </div>
+
+          <div class="menu-item menu-item--featured">
+            <p class="menu-item__title">
+              <strong>Maple Bacon Glazed Pork Chop</strong>
+            </p>
+            <p class="menu-item__description">Center-cut pork chop grilled to perfection and finished with a sweet maple bacon glaze.</p>
+          </div>
+
+          <div class="menu-item">
+            <p class="menu-item__title">
+              <strong>Lazy Man Lasagna</strong>
+            </p>
+            <p class="menu-item__description">Choice of pasta tossed with ricotta cheese, tomato sauce, ground beef, and sweet Italian sausage, then topped with melted mozzarella and baked.</p>
+          </div>
+
+          <div class="menu-item">
+            <p class="menu-item__title">
+              <strong>Grilled Swordfish</strong>
+            </p>
+            <p class="menu-item__description">Thick-cut swordfish steak oven-cooked and finished with lemon butter.</p>
+          </div>
+
+          <div class="menu-item">
+            <p class="menu-item__title">
+              <strong>Beer Battered Haddock</strong>
+            </p>
+            <p class="menu-item__description">Fresh Atlantic haddock dipped in our house-made beer batter and fried to a golden crisp.</p>
+          </div>
+
+          <div class="menu-item menu-item--featured">
+            <p class="menu-item__title">
+              <strong>Cheeseburger Mac N Cheese</strong>
+            </p>
+            <p class="menu-item__description">Cavatappi pasta tossed with ground beef and our house-made creamy cheese sauce, topped with cheddar cheese and light buttery crumbs.</p>
+          </div>
+
+          <div class="menu-item">
+            <p class="menu-item__title">
+              <strong>Sweet Chili Fried Shrimp</strong>
+            </p>
+            <p class="menu-item__description">Crispy golden shrimp tossed in a sweet and tangy chili glaze, with just the right kick.</p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+          </svg>
+          Back to Top
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="footer-modern">
+    <div class="footer-modern__container">
+      <div class="footer-modern__brand">
+        <a href="index.html" class="footer-modern__logo">
+          <img src="images/chef-logo.jpg" alt="Bobola's Restaurant" loading="lazy">
+          <div>
+            <span class="footer-modern__logo-primary">BOBOLA'S</span>
+            <span class="footer-modern__logo-secondary">Restaurant</span>
+          </div>
+        </a>
+        <p class="footer-modern__tagline">Where every meal feels like coming home.</p>
+      </div>
+
+      <div class="footer-modern__links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="about">About Us</a></li>
+          <li><a href="bkmenu">Breakfast Menu</a></li>
+          <li><a href="lunchmenu">Lunch Menu</a></li>
+          <li><a href="dinmenu">Dinner Menu</a></li>
+          <li><a href="hiring">Join Our Team</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-modern__contact">
+        <h3>Visit Us</h3>
+        <address>
+          <p>9 Simon Street<br>Nashua, NH 03060</p>
+          <p><a href="tel:6035771086">(603) 577-1086</a></p>
+        </address>
+        <div class="footer-modern__hours">
+          <p><strong>Hours:</strong></p>
+          <p>Mon: Closed</p>
+          <p>Tue-Fri: 8am - 8pm</p>
+          <p>Sat: 7:30am - 8pm</p>
+          <p>Sun: 7:30am - 2:30pm</p>
+        </div>
+      </div>
+
+      <div class="footer-modern__social">
+        <h3>Follow Us</h3>
+        <div class="footer-modern__social-links">
+          <a href="https://www.facebook.com/BobolasRestaurant" target="_blank" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+        </div>
+        <a href="https://order.toasttab.com/online/bobolas" class="footer-modern__order-btn" target="_blank">
+          Order Online
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-modern__bottom">
+      <p>&copy; 2026 Bobola's Restaurant. All rights reserved.</p>
+      <a href="employee" class="footer-modern__employee-link">Employee Portal</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Navigation Toggle
+    const mobileToggle = document.querySelector('.header-modern__mobile-toggle');
+    const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+    const body = document.body;
+
+    if (mobileToggle && mobileOverlay) {
+      mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        body.classList.toggle('nav-open');
+      });
+
+      // Close on link click
+      mobileOverlay.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.classList.remove('nav-open');
+        });
+      });
+    }
+
+    // Menu Tabs Active State on Scroll
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const sections = document.querySelectorAll('.menu-section');
+
+    function setActiveTab() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      menuTabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('href') === '#' + current) {
+          tab.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', setActiveTab);
+
+    // Smooth scroll for menu tabs
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = tab.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+          const headerOffset = 130;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Back to top links
+    document.querySelectorAll('.back-to-top').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('.header-modern');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <!-- Google Analytics - Deferred for performance -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-H6Z42CN8BR';
+        script.async = true;
+        document.head.appendChild(script);
+
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-H6Z42CN8BR');
+        };
+      }, 100);
+    });
+  </script>
+</body>
+</html>
+

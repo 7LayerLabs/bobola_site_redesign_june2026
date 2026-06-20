@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Join Our Team | Bobola's Restaurant Nashua NH</title>
   <meta name="description" content="We're hiring at Bobola's in Nashua. Family-run restaurant looking for friendly, hardworking people who care about good food and good service." />
+  <link rel="canonical" href="https://bobolasnashua.com/hiring.html" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
-    .section-title { font-family: 'Playfair Display', Georgia, serif; }
-    .warm-btn { background:#c2410f; color:white; }
-    .warm-btn:hover { background:#9f3410; }
-  </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Compiled Tailwind (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20260619e" />
 </head>
 <body class="bg-[#f8f1e9] text-[#3f2e1e]">
   <header class="bg-white border-b border-[#e8dcc8] sticky top-0 z-50">
@@ -28,14 +28,30 @@
           <a href="photos.html" class="hover:text-[#c2410f]">Photos</a>
           <a href="hiring.html" class="text-[#c2410f] font-semibold">We're Hiring</a>
         </nav>
-        <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn px-4 py-1.5 rounded-full text-sm font-semibold hidden sm:inline-flex">Order Online</a>
+        <div class="relative group hidden sm:block">
+          <button class="warm-btn px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+            Order Online
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute right-0 mt-2 w-60 bg-white rounded-xl shadow-lg border border-[#e8dcc8] p-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+            <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#c2410f] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 19L5 8zM9 8V6a3 3 0 016 0v2"/></svg>
+              <span class="text-sm"><span class="font-semibold block leading-tight">Pickup</span><span class="text-xs text-[#8a6f47]">Order online with Toast</span></span>
+            </a>
+            <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+              <img src="images/doordash-logo.svg" alt="DoorDash" class="h-4 shrink-0">
+              <span class="text-sm"><span class="font-semibold block leading-tight">Delivery</span><span class="text-xs text-[#8a6f47]">Get it brought to you</span></span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
   <main class="max-w-[1280px] mx-auto px-5 py-10">
     <div class="max-w-xl">
-      <div class="text-xs uppercase tracking-widest text-[#c2410f]">COME WORK WITH US</div>
+      <div class="eyebrow mb-3">COME WORK WITH US</div>
       <h1 class="section-title text-4xl tracking-tighter font-bold mt-1">We're a small family team that takes care of each other.</h1>
       <p class="mt-3 text-lg text-[#6b5540]">If you like real food, real people, and don't mind working hard while having a good time, we might be a fit.</p>
     </div>
@@ -45,7 +61,7 @@
         <h3 class="font-semibold mb-4">What we're looking for</h3>
         <ul class="space-y-2 text-sm">
           <li class="flex gap-2"><span class="text-[#c2410f]">•</span> Friendly people who actually like talking to customers</li>
-          <li class="flex gap-2"><span class="text-[#c2410f]">•</span> Reliable — we open early and the team counts on each other</li>
+          <li class="flex gap-2"><span class="text-[#c2410f]">•</span> Reliable, we open early and the team counts on each other</li>
           <li class="flex gap-2"><span class="text-[#c2410f]">•</span> Willing to learn (or already know) classic diner / homestyle cooking</li>
           <li class="flex gap-2"><span class="text-[#c2410f]">•</span> Comfortable moving fast when it's busy but still smiling</li>
           <li class="flex gap-2"><span class="text-[#c2410f]">•</span> Team players. No egos, no drama.</li>
@@ -75,7 +91,7 @@
     </div>
 
     <div class="mt-10 text-center text-sm">
-      <a href="contact.html" class="underline decoration-dotted">See our hours &amp; location</a> — come by anytime and introduce yourself.
+      <a href="contact.html" class="underline decoration-dotted">See our hours &amp; location</a>. Come by anytime and introduce yourself.
     </div>
   </main>
 

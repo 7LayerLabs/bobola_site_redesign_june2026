@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photo Gallery | Bobola's Restaurant Nashua NH</title>
   <meta name="description" content="Real photos of the food we serve at Bobola's in Nashua. See the generous portions and homestyle cooking that keep our neighbors coming back." />
+  <link rel="canonical" href="https://bobolasnashua.com/photos.html" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Compiled Tailwind (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20260619e" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
-    .section-title { font-family: 'Playfair Display', Georgia, serif; }
-    .warm-btn { background-color: #c2410f; color: white; transition: all 0.1s ease; }
-    .warm-btn:hover { background-color: #9f3410; }
     .food-thumb { transition: transform .2s ease, box-shadow .2s ease; cursor: zoom-in; }
     .food-thumb:hover { transform: scale(1.015); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.15); }
     .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999; display: none; align-items: center; justify-content: center; padding: 1rem; }
@@ -39,7 +41,23 @@
           <a href="contact.html" class="hover:text-[#c2410f]">Contact</a>
         </nav>
         <div class="flex items-center gap-3">
-          <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn px-5 py-2 rounded-full text-sm font-semibold hidden sm:inline-flex items-center gap-2">Order Online</a>
+          <div class="relative group hidden sm:block">
+            <button class="warm-btn px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              Order Online
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-60 bg-white rounded-xl shadow-lg border border-[#e8dcc8] p-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#c2410f] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 19L5 8zM9 8V6a3 3 0 016 0v2"/></svg>
+                <span class="text-sm"><span class="font-semibold block leading-tight">Pickup</span><span class="text-xs text-[#8a6f47]">Order online with Toast</span></span>
+              </a>
+              <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <img src="images/doordash-logo.svg" alt="DoorDash" class="h-4 shrink-0">
+                <span class="text-sm"><span class="font-semibold block leading-tight">Delivery</span><span class="text-xs text-[#8a6f47]">Get it brought to you</span></span>
+              </a>
+            </div>
+          </div>
           <a href="tel:6035771086" class="text-sm hidden md:inline">(603) 577-1086</a>
           <button id="mobile-btn" class="md:hidden p-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
         </div>
@@ -61,7 +79,7 @@
 
   <main class="max-w-[1280px] mx-auto px-5 pt-10 pb-16">
     <div class="max-w-2xl">
-      <div class="uppercase text-xs tracking-[2px] text-[#c2410f] font-semibold">REAL FOOD. NO FILTERS.</div>
+      <div class="eyebrow mb-3">REAL FOOD. NO FILTERS.</div>
       <h1 class="section-title text-5xl tracking-tighter font-bold mt-1">What we actually put on the table.</h1>
       <p class="mt-3 text-lg text-[#6b5540]">These are the plates that leave our kitchen every day. Big portions. Honest food. The kind of stuff that makes you want to come back tomorrow.</p>
     </div>

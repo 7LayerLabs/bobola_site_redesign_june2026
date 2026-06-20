@@ -1,0 +1,81 @@
+/* ============================================================
+   Bobola's — Tailwind input.
+   Compiled to css/tailwind.css (production, no CDN):
+     npx tailwindcss@3.4.17 -i css/_tw-input.css -o css/tailwind.css --minify
+   Fonts are loaded via <link> in each page <head> for performance.
+   ============================================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Page width container: horizontal padding only, so vertical padding
+     utilities on the same element are not overridden. */
+  .tail-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .section-title {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  /* Section eyebrow/kicker label as a pill */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: rgba(194, 65, 15, 0.12);
+    color: #d4500f;
+    border-radius: 9999px;
+    padding: 0.34rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  /* Eyebrow pill on dark backgrounds */
+  .eyebrow-dark {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #f8f1e9;
+  }
+  .warm-btn {
+    background-color: #c2410f;
+    color: #fff;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+  }
+  .warm-btn:hover {
+    background-color: #9f3410;
+    transform: translateY(-1px);
+  }
+  .outline-btn {
+    border: 2px solid #3f2e1e;
+    color: #3f2e1e;
+    transition: all 0.15s ease;
+  }
+  .outline-btn:hover {
+    background-color: #3f2e1e;
+    color: #fff;
+  }
+  .nav-link {
+    transition: color 0.12s ease;
+  }
+  .nav-link:hover {
+    color: #c2410f;
+  }
+  .food-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .food-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  .food-grid img {
+    transition: transform 0.3s ease;
+  }
+  .food-grid img:hover {
+    transform: scale(1.04);
+  }
+}

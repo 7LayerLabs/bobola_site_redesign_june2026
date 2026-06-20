@@ -7,7 +7,7 @@
   <link rel="manifest" href="manifest.json" />
 
   <!-- SEO Meta Tags -->
-  <title>News &amp; Specials | Bobola's Restaurant Nashua NH - Latest Updates &amp; Events</title>
+  <title>News &amp; Updates | Bobola's Restaurant Nashua NH - Latest Updates &amp; Events</title>
   <meta name="description" content="Stay updated with Bobola's Restaurant news, specials, and events in Nashua NH. Latest menu updates, holiday hours, and community events at our family restaurant." />
   <meta name="keywords" content="Bobola's news, Nashua restaurant specials, restaurant events, menu updates, holiday hours, Nashua NH dining news" />
   <meta name="author" content="Bobola's Restaurant" />
@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://bobolasnashua.com/news.html" />
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="News &amp; Specials | Bobola's Restaurant Nashua NH" />
+  <meta property="og:title" content="News &amp; Updates | Bobola's Restaurant Nashua NH" />
   <meta property="og:description" content="The latest news, specials, and events from our family to yours in Nashua NH." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bobolasnashua.com/news.html" />
@@ -56,9 +56,13 @@
   </script>
 
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Compiled Tailwind (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20260619e" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
     .tail-container { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
     .section-title { font-family: 'Playfair Display', Georgia, serif; }
     .nav-link { transition: color 0.1s ease; }
@@ -89,10 +93,9 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-[#e8dcc8] py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <a href="bkmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Breakfast (until 2pm)</a>
+              <a href="bkmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Breakfast</a>
               <a href="lunchmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Lunch</a>
               <a href="dinmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Dinner</a>
-              <a href="specialmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9] border-t border-[#e8dcc8] mt-1 pt-2">Daily Specials</a>
             </div>
           </div>
           <a href="photos.html" class="nav-link text-[#3f2e1e]">Photos</a>
@@ -101,7 +104,23 @@
         </nav>
         <div class="hidden md:flex items-center gap-3">
           <a href="tel:6035771086" class="text-sm font-medium px-3 py-1.5 hover:bg-[#f8f1e9] rounded-lg">(603) 577-1086</a>
-          <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn px-5 py-2 rounded-full text-sm font-semibold shadow-sm">Order Online</a>
+          <div class="relative group">
+            <button class="warm-btn px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              Order Online
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-60 bg-white rounded-xl shadow-lg border border-[#e8dcc8] p-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#c2410f] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 19L5 8zM9 8V6a3 3 0 016 0v2"/></svg>
+                <span class="text-sm"><span class="font-semibold block leading-tight">Pickup</span><span class="text-xs text-[#8a6f47]">Order online with Toast</span></span>
+              </a>
+              <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <img src="images/doordash-logo.svg" alt="DoorDash" class="h-4 shrink-0">
+                <span class="text-sm"><span class="font-semibold block leading-tight">Delivery</span><span class="text-xs text-[#8a6f47]">Get it brought to you</span></span>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="md:hidden flex items-center gap-2">
           <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn px-4 py-1.5 rounded-full text-sm font-semibold">Order</a>
@@ -121,9 +140,8 @@
       <a href="bkmenu.html" class="py-2 px-1">Breakfast Menu</a>
       <a href="lunchmenu.html" class="py-2 px-1">Lunch Menu</a>
       <a href="dinmenu.html" class="py-2 px-1">Dinner Menu</a>
-      <a href="specialmenu.html" class="py-2 px-1">Daily Specials</a>
       <a href="photos.html" class="py-2 px-1">Photo Gallery</a>
-      <a href="news.html" class="py-2 px-1 text-[#c2410f] font-semibold">News &amp; Specials</a>
+      <a href="news.html" class="py-2 px-1 text-[#c2410f] font-semibold">News</a>
       <a href="contact.html" class="py-2 px-1">Contact &amp; Hours</a>
     </div>
   </div>
@@ -132,9 +150,9 @@
     <!-- Hero -->
     <section class="border-b border-[#e8dcc8] bg-gradient-to-br from-[#f8f1e9] to-[#f1e5d9]">
       <div class="tail-container py-12 md:py-14">
-        <div class="uppercase text-xs tracking-[1.5px] text-[#c2410f] font-semibold mb-2">FROM OUR FAMILY TO YOURS</div>
+        <div class="eyebrow mb-3">FROM OUR FAMILY TO YOURS</div>
         <h1 class="section-title text-4xl md:text-5xl tracking-tighter font-bold">What's cooking at Bobola's</h1>
-        <p class="text-lg text-[#6b5540] mt-3 max-w-xl">News, specials, and the little updates that keep our regulars in the know. We post the day-to-day on Facebook — the bigger stuff lives here.</p>
+        <p class="text-lg text-[#6b5540] mt-3 max-w-xl">News, specials, and the little updates that keep our regulars in the know. We post the day-to-day on Facebook. The bigger stuff lives here.</p>
       </div>
     </section>
 
@@ -159,7 +177,7 @@
           <article class="bg-white rounded-2xl p-6 border border-[#e8dcc8]">
             <div class="text-xs text-[#8a6f47] font-medium mb-1">December 15, 2025</div>
             <h3 class="font-semibold text-lg mb-1.5">Fresh Atlantic Seafood Now Available</h3>
-            <p class="text-[#5c4632] text-[15px] leading-relaxed">Our fresh seafood menu is back. Try the fried haddock, shrimp scampi, and other favorites Nashua locals love — sourced fresh and cooked the homestyle way.</p>
+            <p class="text-[#5c4632] text-[15px] leading-relaxed">Our fresh seafood menu is back. Try the fried haddock, shrimp scampi, and other favorites Nashua locals love, sourced fresh and cooked the homestyle way.</p>
             <a href="dinmenu.html" class="inline-block mt-3 text-sm font-semibold text-[#c2410f] hover:underline">View dinner menu &rarr;</a>
           </article>
 
@@ -173,7 +191,7 @@
           <article class="bg-white rounded-2xl p-6 border border-[#e8dcc8]">
             <div class="text-xs text-[#8a6f47] font-medium mb-1">November 15, 2025</div>
             <h3 class="font-semibold text-lg mb-1.5">Order Online for Pickup</h3>
-            <p class="text-[#5c4632] text-[15px] leading-relaxed">Skip the wait — order your Bobola's favorites online for pickup. Breakfast, lunch, and dinner, ready when you are.</p>
+            <p class="text-[#5c4632] text-[15px] leading-relaxed">Skip the wait. Order your Bobola's favorites online for pickup. Breakfast, lunch, and dinner, ready when you are.</p>
             <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="inline-block mt-3 text-sm font-semibold text-[#c2410f] hover:underline">Order online &rarr;</a>
           </article>
 
@@ -202,7 +220,7 @@
             <div class="text-sm text-[#5c4632] space-y-1.5">
               <p><span class="text-[#8a6f47]">Phone:</span> <a href="tel:6035771086" class="font-medium hover:text-[#c2410f]">(603) 577-1086</a></p>
               <p><span class="text-[#8a6f47]">Address:</span> 9 Simon Street, Nashua, NH 03060</p>
-              <p><span class="text-[#8a6f47]">Hours:</span> Tue–Fri 8–8, Sat 7:30–8, Sun 7:30–2:30</p>
+              <p><span class="text-[#8a6f47]">Hours:</span> Tue to Thu 8am to 3pm, Fri 8am to 8pm, Sat 7:30am to 8pm, Sun 7:30am to 2:30pm</p>
             </div>
           </div>
           <div class="bg-[#3f2e1e] text-[#f8f1e9] rounded-2xl p-6">

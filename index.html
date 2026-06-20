@@ -27,56 +27,75 @@
 
   <link rel="icon" type="image/png" href="images/favicon.png" />
 
-  <!-- Tailwind CDN for modern, fast design -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Compiled, production Tailwind (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20260619e" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
-    
-    :root {
-      --warm-cream: #f8f1e9;
-      --deep-brown: #3f2e1e;
-      --rust: #c2410f;
-      --gold: #b45309;
-    }
-    
-    .tail-container { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
-    
-    .nav-link { transition: color 0.1s ease; }
-    .nav-link:hover { color: #c2410f; }
-    
-    .food-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .food-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
-    
-    .section-title { font-family: 'Playfair Display', Georgia, serif; }
-    
-    .warm-btn {
-      background-color: #c2410f;
-      color: white;
-      transition: all 0.1s ease;
-    }
-    .warm-btn:hover { background-color: #9f3410; transform: translateY(-1px); }
-    
-    .outline-btn {
-      border: 2px solid #3f2e1e;
-      color: #3f2e1e;
-      transition: all 0.1s ease;
-    }
-    .outline-btn:hover { background-color: #3f2e1e; color: white; }
-    
-    .food-grid img { transition: transform 0.3s ease; }
-    .food-grid img:hover { transform: scale(1.04); }
-    
-    .trust-item { transition: all 0.1s ease; }
-    
-    .home-hero-bg {
-      background: linear-gradient(135deg, #f8f1e9 0%, #f1e5d9 100%);
-    }
-    
-    .neighborhood-badge {
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(63,46,30,0.1);
-    }
+    .home-hero-bg { background: linear-gradient(135deg, #f8f1e9 0%, #f1e5d9 100%); }
+    .neighborhood-badge { background: #fff; box-shadow: 0 1px 3px rgba(63,46,30,0.1); }
+    /* Scrolling reviews marquee */
+    .reviews-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent); }
+    .reviews-marquee__track { display: flex; width: max-content; animation: reviews-scroll 55s linear infinite; }
+    .reviews-marquee:hover .reviews-marquee__track { animation-play-state: paused; }
+    .review-card { flex: 0 0 360px; max-width: 86vw; margin-right: 1rem; }
+    @keyframes reviews-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .reviews-marquee__track { animation: none; transform: none; } }
   </style>
+
+  <!-- Local Business / Restaurant structured data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Bobola's Restaurant",
+    "image": "https://bobolasnashua.com/images/building/front.jpg",
+    "url": "https://bobolasnashua.com/",
+    "telephone": "+1-603-577-1086",
+    "priceRange": "$$",
+    "servesCuisine": ["American", "Breakfast", "Comfort Food", "Italian"],
+    "acceptsReservations": "False",
+    "hasMenu": "https://bobolasnashua.com/bkmenu.html",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9 Simon Street",
+      "addressLocality": "Nashua",
+      "addressRegion": "NH",
+      "postalCode": "03060",
+      "addressCountry": "US"
+    },
+    "sameAs": ["https://www.facebook.com/BobolasRestaurant/"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
+        "opens": "08:00",
+        "closes": "15:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "07:30",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "07:30",
+        "closes": "14:30"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-[#f8f1e9] text-[#3f2e1e] font-sans">
   <!-- Header -->
@@ -102,10 +121,9 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-[#e8dcc8] py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <a href="bkmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Breakfast (until 2pm)</a>
+              <a href="bkmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Breakfast</a>
               <a href="lunchmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Lunch</a>
               <a href="dinmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Dinner</a>
-              <a href="specialmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9] border-t border-[#e8dcc8] mt-1 pt-2">Daily Specials</a>
             </div>
           </div>
           <a href="photos.html" class="nav-link text-[#3f2e1e]">Photos</a>
@@ -117,16 +135,28 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2 3 3 0 013 3v1m6 0v1a3 3 0 01-3 3H9a3 3 0 01-3-3V8m9 0a2 2 0 002-2V5" /></svg>
             <span>(603) 577-1086</span>
           </a>
-          <a href="https://order.toasttab.com/online/bobolas" target="_blank" 
-             class="warm-btn px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-            Order Online
-          </a>
+          <div class="relative group">
+            <button class="warm-btn px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              Order Online
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-60 bg-white rounded-xl shadow-lg border border-[#e8dcc8] p-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#c2410f] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 19L5 8zM9 8V6a3 3 0 016 0v2"/></svg>
+                <span class="text-sm"><span class="font-semibold block leading-tight">Pickup</span><span class="text-xs text-[#8a6f47]">Order online with Toast</span></span>
+              </a>
+              <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <img src="images/doordash-logo.svg" alt="DoorDash" class="h-4 shrink-0">
+                <span class="text-sm"><span class="font-semibold block leading-tight">Delivery</span><span class="text-xs text-[#8a6f47]">Get it brought to you</span></span>
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- Mobile -->
         <div class="md:hidden flex items-center gap-2">
-          <a href="https://order.toasttab.com/online/bobolas" target="_blank" 
+          <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener"
              class="warm-btn px-4 py-1.5 rounded-full text-sm font-semibold">Order</a>
           <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-[#f8f1e9]" aria-label="Menu">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
@@ -144,38 +174,39 @@
       <a href="bkmenu.html" class="py-2 px-1">Breakfast Menu</a>
       <a href="lunchmenu.html" class="py-2 px-1">Lunch Menu</a>
       <a href="dinmenu.html" class="py-2 px-1">Dinner Menu</a>
-      <a href="specialmenu.html" class="py-2 px-1">Daily Specials</a>
       <a href="photos.html" class="py-2 px-1">Photo Gallery</a>
       <a href="contact.html" class="py-2 px-1">Contact &amp; Hours</a>
+      <a href="feedback.html" class="py-2 px-1">Share Feedback</a>
       <div class="pt-2 mt-2 border-t flex flex-col gap-2">
         <a href="tel:6035771086" class="py-1.5">(603) 577-1086</a>
-        <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn text-center py-2.5 rounded-full font-semibold">Order Online Now</a>
+        <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="warm-btn text-center py-2.5 rounded-full font-semibold">Order Pickup (Toast)</a>
+        <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="text-center py-2.5 rounded-full font-semibold border border-[#e8dcc8] inline-flex items-center justify-center gap-2"><img src="images/doordash-logo.svg" alt="DoorDash" class="h-4"> Delivery</a>
       </div>
     </div>
   </div>
 
   <main>
     <!-- HERO -->
-    <section class="home-hero-bg border-b border-[#e8dcc8]">
-      <div class="tail-container py-12 md:py-16">
-        <div class="grid md:grid-cols-2 gap-10 items-center">
+    <section class="home-hero-bg">
+      <div class="tail-container pt-14 md:pt-20 pb-14 md:pb-16">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
           <div class="max-w-xl">
             <div class="inline-flex items-center gap-2 neighborhood-badge px-4 py-1 rounded-full text-xs font-semibold tracking-wider mb-5">
-              <span class="text-[#c2410f]">★</span> 
+              <span class="text-[#c2410f]">★</span>
               <span>FAMILY-RUN SINCE 2018</span>
             </div>
-            
+
             <h1 class="section-title text-5xl md:text-6xl leading-[1.05] tracking-tighter font-bold mb-4">
               Your neighborhood<br>spot for real food.
             </h1>
-            
+
             <p class="text-xl text-[#6b5540] mb-8 max-w-md">
-              No fancy airs. Just generous portions of the comfort food you actually want, 
+              Nothing fancy. Just generous portions of the comfort food you actually want,
               made by a family that cares.
             </p>
-            
+
             <div class="flex flex-wrap gap-3">
-              <a href="https://order.toasttab.com/online/bobolas" target="_blank"
+              <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener"
                  class="warm-btn inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full font-semibold text-base shadow">
                 <span>Order Online</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M5 12h14" /></svg>
@@ -200,7 +231,7 @@
                   <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.69-1.54 1.12l-3.56-2.59a1 1 0 00-1.18 0l-3.56 2.59c-.78.57-1.84-.2-1.54-1.12l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.61c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69L9.05 2.93z"/></svg>
                   <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><defs><linearGradient id="half"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="#e8dcc8"/></linearGradient></defs><path fill="url(#half)" d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.69-1.54 1.12l-3.56-2.59a1 1 0 00-1.18 0l-3.56 2.59c-.78.57-1.84-.2-1.54-1.12l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.61c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69L9.05 2.93z"/></svg>
                 </div>
-                <span class="text-sm font-semibold">4.5</span>
+                <span class="text-sm font-semibold" data-google-rating>4.5</span>
                 <span class="text-xs text-[#8a6f47]">on Google</span>
               </div>
               <div class="w-1 h-1 rounded-full bg-[#c4b39a]"></div>
@@ -216,7 +247,7 @@
 
           <!-- Hero image: the building -->
           <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-[#e8dcc8] aspect-[16/12] md:aspect-auto md:h-[460px]">
-            <img src="images/building/front.jpg" alt="Bobola's Restaurant building on Simon Street in Nashua" 
+            <img src="images/building/front.jpg" alt="Bobola's Restaurant building on Simon Street in Nashua"
                  class="absolute inset-0 w-full h-full object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent h-1/2"></div>
             <div class="absolute bottom-6 left-6 text-white">
@@ -228,117 +259,120 @@
       </div>
     </section>
 
-    <!-- TRUST / AUTHENTIC BAR -->
-    <section class="bg-white border-b border-[#e8dcc8]">
-      <div class="tail-container">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#e8dcc8]">
-          <div class="trust-item bg-[#f8f1e9] px-5 py-5 text-center">
-            <div class="font-semibold text-[#c2410f] text-lg">Family Owned</div>
-            <div class="text-xs text-[#6b5540] mt-0.5">Not a chain. Not a corporation.</div>
+    <!-- TRUST BAND (bold dark band so it stands out) -->
+    <section class="bg-[#3f2e1e] text-[#f8f1e9]">
+      <div class="tail-container py-10 md:py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 text-center divide-y divide-white/10 md:divide-y-0 md:divide-x">
+          <div class="px-3 pt-8 first:pt-0 md:pt-0">
+            <svg class="w-7 h-7 mx-auto mb-2 text-[#e8923f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-2a4 4 0 014-4h3m6.5-1.5L21 16m0 0l-2.5 2.5M21 16h-6M9 7a3 3 0 11-6 0 3 3 0 016 0zm9-1a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/></svg>
+            <div class="font-semibold text-lg tracking-tight">Family Owned</div>
+            <div class="text-xs text-[#e8dcc8]/70 mt-1">Not a chain. Not a corporation.</div>
           </div>
-          <div class="trust-item bg-[#f8f1e9] px-5 py-5 text-center">
-            <div class="font-semibold text-[#c2410f] text-lg">Big Portions</div>
-            <div class="text-xs text-[#6b5540] mt-0.5">We put the money in the plate, not the decor.</div>
+          <div class="px-3 pt-8 md:pt-0">
+            <svg class="w-7 h-7 mx-auto mb-2 text-[#e8923f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 9h16l-1 2H5L4 9zM4 9c0-2 3.6-3.5 8-3.5S20 7 20 9M6 13h12l-1 5a2 2 0 01-2 1.6H9A2 2 0 017 18l-1-5z"/></svg>
+            <div class="font-semibold text-lg tracking-tight">Big Portions</div>
+            <div class="text-xs text-[#e8dcc8]/70 mt-1">The money goes in the plate, not the decor.</div>
           </div>
-          <div class="trust-item bg-[#f8f1e9] px-5 py-5 text-center">
-            <div class="font-semibold text-[#c2410f] text-lg">Come As You Are</div>
-            <div class="text-xs text-[#6b5540] mt-0.5">Work boots, kids, grandparents — all welcome.</div>
+          <div class="px-3 pt-8 md:pt-0">
+            <svg class="w-7 h-7 mx-auto mb-2 text-[#e8923f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-9.5-8.5C.5 9 2 5 6 5c2 0 3 1 4 2 1-1 2-2 4-2 4 0 5.5 4 3.5 7.5C19 16.65 12 21 12 21z"/></svg>
+            <div class="font-semibold text-lg tracking-tight">Come As You Are</div>
+            <div class="text-xs text-[#e8dcc8]/70 mt-1">Work boots, kids, grandparents, all welcome.</div>
           </div>
-          <div class="trust-item bg-[#f8f1e9] px-5 py-5 text-center">
-            <div class="font-semibold text-[#c2410f] text-lg">8+ Years</div>
-            <div class="text-xs text-[#6b5540] mt-0.5">Serving Nashua neighbors since 2018.</div>
+          <div class="px-3 pt-8 md:pt-0">
+            <svg class="w-7 h-7 mx-auto mb-2 text-[#e8923f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2"/></svg>
+            <div class="font-semibold text-lg tracking-tight">8+ Years</div>
+            <div class="text-xs text-[#e8dcc8]/70 mt-1">Serving Nashua neighbors since 2018.</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FOOD GALLERY TEASER -->
-    <section class="py-12 md:py-16">
+    <section class="pt-14 md:pt-16 pb-12 md:pb-16">
       <div class="tail-container">
         <div class="flex items-end justify-between mb-6">
           <div>
-            <div class="uppercase text-xs tracking-[1.5px] text-[#c2410f] font-semibold mb-1">FRESH OFF THE LINE</div>
-            <h2 class="section-title text-4xl tracking-tighter font-bold">What we're serving today</h2>
+            <div class="eyebrow mb-3">FRESH OFF THE LINE</div>
+            <h2 class="section-title text-4xl tracking-tighter font-bold">What we're serving up</h2>
           </div>
           <a href="photos.html" class="hidden md:flex items-center gap-2 text-sm font-medium hover:text-[#c2410f]">
-            See the full gallery 
+            See the full gallery
             <span aria-hidden="true">→</span>
           </a>
         </div>
 
-        <!-- Food image grid - using new photos -->
+        <!-- Food image grid - real dishes, real names -->
         <div class="food-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
           <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/country-breakfast.jpeg" alt="Country Breakfast with eggs, sausage, bacon, ham and home fries" class="w-full h-full object-cover">
+            <img src="images/Food%20Images/Breakfast/Country%20Breakfast.jpeg" alt="Country Breakfast with eggs, bacon, country ham, sausage and home fries" loading="lazy" class="w-full h-full object-cover">
             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
               <div class="text-white text-sm font-medium">Country Breakfast</div>
             </div>
           </div>
           <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/ham-benedict2.jpeg" alt="Ham Benedict with hollandaise and home fries" class="w-full h-full object-cover">
+            <img src="images/Food%20Images/Breakfast/Ham%20Eggs%20Benedict.jpeg" alt="Ham Eggs Benedict with hollandaise and home fries" loading="lazy" class="w-full h-full object-cover">
             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">Ham Benedict</div>
+              <div class="text-white text-sm font-medium">Ham Eggs Benedict</div>
             </div>
           </div>
           <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/American-Chop-Suey.jpeg" alt="Classic American Chop Suey" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">American Chop Suey</div>
-            </div>
-          </div>
-          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/loaded-reeses-waffle.jpeg" alt="Loaded Reese's Waffle" class="w-full h-full object-cover" onerror="this.style.display='none'">
-            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">Loaded Reese's Waffle</div>
-            </div>
-          </div>
-          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/french-toast2.jpeg" alt="French Toast breakfast plate" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">French Toast</div>
-            </div>
-          </div>
-          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/Buffalo-Fingers.jpeg" alt="Buffalo Chicken Fingers" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">Buffalo Fingers</div>
-            </div>
-          </div>
-          <!-- More from the new batch -->
-          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/1777556838877-suziyh.jpeg" alt="Signature dish from Bobola's kitchen" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">Kitchen Favorite</div>
-            </div>
-          </div>
-          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/1777556838877-8t8utt.jpeg" alt="Beautifully plated comfort food" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">Plated with Care</div>
-            </div>
-          </div>
-          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/coffee-roll.jpeg" alt="Fresh coffee roll" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">Coffee Roll</div>
-            </div>
-          </div>
-          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/chocolate-chip-pc2.jpeg" alt="Chocolate chip pancakes" class="w-full h-full object-cover">
+            <img src="images/Food%20Images/Breakfast/Chocolate%20Chip%20Pancakes.jpeg" alt="Chocolate chip pancakes" loading="lazy" class="w-full h-full object-cover">
             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
               <div class="text-white text-sm font-medium">Chocolate Chip Pancakes</div>
             </div>
           </div>
           <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/1777556838876-y64k2i.jpeg" alt="Hearty lunch or dinner plate" class="w-full h-full object-cover">
+            <img src="images/Food%20Images/Breakfast/Loaded%20Reeses%20Waffle.jpeg" alt="Loaded Reese's waffle dessert" loading="lazy" class="w-full h-full object-cover">
             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">Hearty Plate</div>
+              <div class="text-white text-sm font-medium">Loaded Reese's Waffle</div>
             </div>
           </div>
           <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
-            <img src="images/food/1777556838877-vlxbbq.jpeg" alt="Fresh made meal at Bobola's" class="w-full h-full object-cover">
+            <img src="images/Food%20Images/Breakfast/French%20Toast.jpeg" alt="Thick-cut French toast breakfast plate" loading="lazy" class="w-full h-full object-cover">
             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
-              <div class="text-white text-sm font-medium">Made Today</div>
+              <div class="text-white text-sm font-medium">French Toast</div>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
+            <img src="images/Food%20Images/Lunch/Bacon%20Cheeseburger%20with%20Fries.jpeg" alt="Bacon cheeseburger with a pile of fries" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
+              <div class="text-white text-sm font-medium">Bacon Cheeseburger</div>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
+            <img src="images/Food%20Images/Lunch/Chicken%20Parm%20Sub%20with%20Onion%20Rings.jpeg" alt="Chicken parm sub with onion rings" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
+              <div class="text-white text-sm font-medium">Chicken Parm Sub</div>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
+            <img src="images/Food%20Images/Lunch/Buffalo%20Chicken%20Bowl.jpeg" alt="Buffalo chicken bowl" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
+              <div class="text-white text-sm font-medium">Buffalo Chicken Bowl</div>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
+            <img src="images/Food%20Images/Dinner/American%20Chop%20Suey.jpeg" alt="Classic American chop suey" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
+              <div class="text-white text-sm font-medium">American Chop Suey</div>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
+            <img src="images/Food%20Images/Dinner/Fried%20Seafood%20Platter.jpeg" alt="Fried seafood platter" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
+              <div class="text-white text-sm font-medium">Fried Seafood Platter</div>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
+            <img src="images/Food%20Images/Dinner/Chicken%20Broccoli%20Alfredo.jpeg" alt="Chicken broccoli alfredo" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
+              <div class="text-white text-sm font-medium">Chicken Broccoli Alfredo</div>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-square shadow-sm border border-[#e8dcc8]">
+            <img src="images/Food%20Images/Dinner/Turkey%20Dinner.jpeg" alt="Roast turkey dinner with all the fixings" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 p-3">
+              <div class="text-white text-sm font-medium">Turkey Dinner</div>
             </div>
           </div>
         </div>
@@ -353,55 +387,13 @@
     <section class="bg-white py-12 border-y border-[#e8dcc8]">
       <div class="tail-container max-w-3xl">
         <div class="text-center mb-8">
-          <div class="text-[#c2410f] text-xs tracking-[2px] font-semibold mb-2">WHY PEOPLE KEEP COMING BACK</div>
+          <div class="eyebrow mb-3">WHY PEOPLE KEEP COMING BACK</div>
           <h2 class="section-title text-3xl md:text-4xl tracking-tight font-bold">We're not trying to be fancy.<br>We just make food that feels like home.</h2>
         </div>
-        
-        <div class="prose prose-stone text-[#5c4632] max-w-none text-[15px] leading-relaxed mx-auto">
-          <p class="text-center">This is a family place. We open early, we stay late enough, and we make sure your plate looks like someone actually cares you’re eating. The portions are big because that’s how we were raised — you don’t leave hungry. The prices are fair because we know what it’s like to work for a living.</p>
-          <p class="text-center mt-4">Whether it’s eggs the way you like them at 8am, a hot bowl of soup on a cold day, or Friday fish the way it should be, we’re here for the regulars and the first-timers alike. Come in, sit wherever you like, and let us take care of you.</p>
-        </div>
 
-        <div class="mt-8 flex justify-center gap-4">
-          <a href="about.html" class="inline-flex items-center gap-2 text-sm font-semibold border-b border-[#c2410f] pb-0.5 hover:text-[#c2410f]">Read our full story</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- STEP INSIDE / WHO WE ARE -->
-    <section class="py-12 md:py-16">
-      <div class="tail-container">
-        <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
-          <div class="relative rounded-3xl overflow-hidden shadow-xl border border-[#e8dcc8] aspect-[4/3]">
-            <img src="images/inside.jpg" alt="Inside the dining room at Bobola's" class="absolute inset-0 w-full h-full object-cover" onerror="this.src='images/building/front.jpg'">
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent h-2/3"></div>
-            <div class="absolute bottom-5 left-5 text-white">
-              <div class="text-[11px] uppercase tracking-[2px] opacity-80 mb-0.5">PULL UP A CHAIR</div>
-              <div class="text-xl font-semibold tracking-tight">Sit wherever you like</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="uppercase text-xs tracking-[1.5px] text-[#c2410f] font-semibold mb-2">THE FAMILY BEHIND THE PLATE</div>
-            <h2 class="section-title text-3xl md:text-4xl tracking-tighter font-bold mb-4">It started with a 13-year-old dishwasher.</h2>
-            <p class="text-[#5c4632] leading-relaxed mb-4">
-              Frank Bobola fell in love with the restaurant business as a kid and never looked back — from line cook to chef to opening
-              his own neighborhood spots. In 2018 the family carried his name and his way of doing things to 9 Simon Street.
-            </p>
-            <p class="text-[#5c4632] leading-relaxed mb-6">
-              His rule was simple: treat people right, give them more than they expect, and keep the food honest. That's still
-              exactly how we run the place.
-            </p>
-            <div class="flex flex-wrap items-center gap-4">
-              <div class="flex items-center gap-3">
-                <img src="images/frankbobola.jpg" alt="Frank Bobola, founder" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow" onerror="this.style.display='none'">
-                <div class="text-xs text-[#8a6f47] leading-snug">Frank Bobola<br>Where it all began</div>
-              </div>
-              <a href="about.html" class="inline-flex items-center gap-2 text-sm font-semibold text-[#c2410f] hover:gap-3 transition-all">
-                Meet the family <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
+        <div class="text-[#5c4632] text-[15px] leading-relaxed mx-auto space-y-4">
+          <p class="text-center">This is a family place. We open early, we make sure your plate looks like someone actually cares you're eating, and the portions are big because that's how we were raised, you don't leave hungry. The prices are fair because we know what it's like to work for a living.</p>
+          <p class="text-center">Whether it's eggs the way you like them in the morning, a hot bowl of soup on a cold day, or a Friday dinner that hits the spot, we're here for the regulars and the first-timers alike. Come in, sit wherever you like, and let us take care of you.</p>
         </div>
       </div>
     </section>
@@ -415,80 +407,188 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-4">
-          <a href="bkmenu.html" class="group block bg-white rounded-2xl p-6 border border-[#e8dcc8] hover:border-[#c2410f]/40 transition">
-            <div class="w-12 h-12 rounded-xl bg-[#f8f1e9] flex items-center justify-center mb-4 group-hover:bg-[#c2410f]/10 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v2M5.6 6.6l1.4 1.4M18.4 6.6L17 8M3 13h2m14 0h2M4 17h16"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 13a5 5 0 0110 0"/></svg>
+          <a href="bkmenu.html" class="group block bg-white rounded-2xl border border-[#e8dcc8] hover:border-[#c2410f]/40 transition overflow-hidden">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="images/Food%20Images/Breakfast/Ham%20Eggs%20Benedict.jpeg" alt="Ham eggs benedict plated with hollandaise and home fries" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             </div>
-            <div class="font-semibold text-xl mb-1 group-hover:text-[#c2410f]">Breakfast</div>
-            <div class="text-sm text-[#6b5540]">Served until 2pm every day. Omelettes, pancakes, the famous Belly Buster, benedicts &amp; more.</div>
-            <div class="mt-4 text-xs font-medium text-[#c2410f] flex items-center gap-1">See breakfast menu <span>→</span></div>
+            <div class="p-6">
+              <div class="font-semibold text-xl mb-1 group-hover:text-[#c2410f]">Breakfast</div>
+              <div class="text-sm text-[#6b5540]">Served until 3pm, Tuesday through Saturday. Omelettes, pancakes, the famous Belly Buster, benedicts &amp; more.</div>
+              <div class="mt-4 text-xs font-medium text-[#c2410f] flex items-center gap-1">See breakfast menu <span>→</span></div>
+            </div>
           </a>
-          <a href="lunchmenu.html" class="group block bg-white rounded-2xl p-6 border border-[#e8dcc8] hover:border-[#c2410f]/40 transition">
-            <div class="w-12 h-12 rounded-xl bg-[#f8f1e9] flex items-center justify-center mb-4 group-hover:bg-[#c2410f]/10 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 9h16l-1 2H5L4 9zM4 9c0-2 3.6-3.5 8-3.5S20 7 20 9M6 13h12l-1 5a2 2 0 01-2 1.6H9A2 2 0 017 18l-1-5z"/></svg>
+          <a href="lunchmenu.html" class="group block bg-white rounded-2xl border border-[#e8dcc8] hover:border-[#c2410f]/40 transition overflow-hidden">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="images/Food%20Images/Lunch/Bacon%20Cheeseburger%20with%20Fries.jpeg" alt="Bacon cheeseburger with a pile of fries" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             </div>
-            <div class="font-semibold text-xl mb-1 group-hover:text-[#c2410f]">Lunch</div>
-            <div class="text-sm text-[#6b5540]">Sandwiches, burgers, salads, soups, and homestyle plates that hit the spot.</div>
-            <div class="mt-4 text-xs font-medium text-[#c2410f] flex items-center gap-1">See lunch menu <span>→</span></div>
+            <div class="p-6">
+              <div class="font-semibold text-xl mb-1 group-hover:text-[#c2410f]">Lunch</div>
+              <div class="text-sm text-[#6b5540]">Sandwiches, burgers, salads, soups, and homestyle plates that hit the spot.</div>
+              <div class="mt-4 text-xs font-medium text-[#c2410f] flex items-center gap-1">See lunch menu <span>→</span></div>
+            </div>
           </a>
-          <a href="dinmenu.html" class="group block bg-white rounded-2xl p-6 border border-[#e8dcc8] hover:border-[#c2410f]/40 transition">
-            <div class="w-12 h-12 rounded-xl bg-[#f8f1e9] flex items-center justify-center mb-4 group-hover:bg-[#c2410f]/10 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3v8a2 2 0 01-2 2H4m3-10v18M5 3v6m4-6v6M17 3c-1.5 0-2.5 2-2.5 5s1 4 2.5 4m0-9c1.5 0 2.5 2 2.5 5s-1 4-2.5 4m0 0v8"/></svg>
+          <a href="dinmenu.html" class="group block bg-white rounded-2xl border border-[#e8dcc8] hover:border-[#c2410f]/40 transition overflow-hidden">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="images/Food%20Images/Dinner/Fried%20Seafood%20Platter.jpeg" alt="Fried seafood platter" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             </div>
-            <div class="font-semibold text-xl mb-1 group-hover:text-[#c2410f]">Dinner</div>
-            <div class="text-sm text-[#6b5540]">Italian favorites, seafood, steaks, chops, and comfort classics done right.</div>
-            <div class="mt-4 text-xs font-medium text-[#c2410f] flex items-center gap-1">See dinner menu <span>→</span></div>
+            <div class="p-6">
+              <div class="font-semibold text-xl mb-1 group-hover:text-[#c2410f]">Dinner</div>
+              <div class="text-sm text-[#6b5540]">Italian favorites, seafood, and comfort classics. Served Friday &amp; Saturday evenings.</div>
+              <div class="mt-4 text-xs font-medium text-[#c2410f] flex items-center gap-1">See dinner menu <span>→</span></div>
+            </div>
           </a>
         </div>
-        <div class="text-center mt-5">
-          <a href="specialmenu.html" class="text-sm underline decoration-dotted">Check today's specials too →</a>
+        <div class="mt-8 text-center">
+          <div class="text-sm font-medium text-[#6b5540] mb-4">Order online for pickup or delivery. Full prices on each platform.</div>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center max-w-lg mx-auto">
+            <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="warm-btn inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold w-full sm:w-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              Order Pickup
+            </a>
+            <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" aria-label="Order delivery on DoorDash" class="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold bg-white border border-[#e8dcc8] hover:border-[#c2410f]/40 transition w-full sm:w-auto">
+              <img src="images/doordash-logo.svg" alt="DoorDash" class="h-[18px]">
+              <span class="text-[#3f2e1e]">Delivery</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS (kept authentic feel) -->
+    <!-- MORE TO LOVE -->
+    <section class="py-12 md:py-16">
+      <div class="tail-container">
+        <div class="text-center mb-8">
+          <div class="eyebrow mb-3">MORE TO LOVE</div>
+          <h2 class="section-title text-3xl tracking-tight font-bold">A few more reasons to pull up a chair</h2>
+          <p class="text-[#6b5540] mt-2 max-w-xl mx-auto">Beyond the plates, there's plenty to stick around for.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <!-- KENO -->
+          <div class="bg-white rounded-2xl p-5 border border-[#e8dcc8] text-center">
+            <div class="w-12 h-12 rounded-xl bg-[#f8f1e9] flex items-center justify-center mx-auto mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8a2 2 0 012-2h14a2 2 0 012 2v1.5a2 2 0 000 5V16a2 2 0 01-2 2H5a2 2 0 01-2-2v-1.5a2 2 0 000-5V8z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.5 2.5" d="M14 6v12"/></svg>
+            </div>
+            <div class="font-semibold text-[#3f2e1e]">KENO</div>
+            <div class="text-xs text-[#6b5540] mt-1">Play right from your table.</div>
+          </div>
+          <!-- Full bar -->
+          <div class="bg-white rounded-2xl p-5 border border-[#e8dcc8] text-center">
+            <div class="w-12 h-12 rounded-xl bg-[#f8f1e9] flex items-center justify-center mx-auto mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 4h14l-7 8-7-8zM12 12v7M8 19h8"/></svg>
+            </div>
+            <div class="font-semibold text-[#3f2e1e]">Full Liquor License</div>
+            <div class="text-xs text-[#6b5540] mt-1">Cocktails, beer &amp; wine. Full bar.</div>
+          </div>
+          <!-- Homemade pies -->
+          <div class="bg-white rounded-2xl p-5 border border-[#e8dcc8] text-center">
+            <div class="w-12 h-12 rounded-xl bg-[#f8f1e9] flex items-center justify-center mx-auto mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 14a9 9 0 0118 0H3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2 14h20M12 5.5c0-1 1-1.5 1.8-1"/></svg>
+            </div>
+            <div class="font-semibold text-[#3f2e1e]">Homemade Pies</div>
+            <div class="text-xs text-[#6b5540] mt-1">Baked in-house, old-fashioned.</div>
+          </div>
+          <!-- Hershey's dessert -->
+          <div class="bg-white rounded-2xl p-5 border border-[#e8dcc8] text-center">
+            <div class="w-12 h-12 rounded-xl bg-[#f8f1e9] flex items-center justify-center mx-auto mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9a4 4 0 018 0"/><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 9h9l-4.5 12-4.5-12z"/></svg>
+            </div>
+            <div class="font-semibold text-[#3f2e1e]">Hershey's Ice Cream</div>
+            <div class="text-xs text-[#6b5540] mt-1">New dessert menu: scoops, sundaes &amp; frappes.</div>
+          </div>
+          <!-- Lemonade -->
+          <div class="bg-white rounded-2xl p-5 border border-[#e8dcc8] text-center">
+            <div class="w-12 h-12 rounded-xl bg-[#f8f1e9] flex items-center justify-center mx-auto mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#c2410f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10l-1.1 12.2A2 2 0 0113.8 21h-3.6a2 2 0 01-2-1.8L7 7z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 7l1-3h4l1 3M15 3.5l-1.5 3"/></svg>
+            </div>
+            <div class="font-semibold text-[#3f2e1e]">Fresh-Squeezed Lemonade</div>
+            <div class="text-xs text-[#6b5540] mt-1">Our summertime favorite.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
     <section class="bg-white py-12 border-y border-[#e8dcc8]">
       <div class="tail-container">
         <div class="text-center mb-8">
+          <div class="eyebrow mb-3">WHAT NEIGHBORS SAY</div>
           <h2 class="section-title text-3xl tracking-tight font-bold">Real words from real neighbors</h2>
+          <p class="text-sm text-[#6b5540] mt-2"><span data-google-rating>4.5</span> stars on Google. Here's a taste of what people are saying.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-4">
-          <div class="bg-[#f8f1e9] rounded-2xl p-6">
+      </div>
+      <div class="reviews-marquee">
+        <div class="reviews-marquee__track">
+          <!-- set 1 -->
+          <div class="review-card bg-[#f8f1e9] rounded-2xl p-6 border border-[#e8dcc8]">
             <div class="flex text-[#c2410f] mb-3">★★★★★</div>
             <p class="text-sm leading-snug">"We've been to Bobola's several times for breakfast and dinner. The food is excellent, the wait staff is very attentive, servings are large and food quality is great. Bobola's has a diner-like atmosphere and is the perfect place when you're looking for some great food and service."</p>
-            <div class="mt-4 text-xs font-medium">— Joe B., Google</div>
+            <div class="mt-4 text-xs font-medium">Joe B., Google</div>
           </div>
-          <div class="bg-[#f8f1e9] rounded-2xl p-6">
+          <div class="review-card bg-[#f8f1e9] rounded-2xl p-6 border border-[#e8dcc8]">
             <div class="flex text-[#c2410f] mb-3">★★★★★</div>
             <p class="text-sm leading-snug">"Came in for lunch at the bar, and dang it's some great food, super friendly staff, and awesome atmosphere. I ordered the bacon cheeseburger which was really well crafted. They don't skimp on portion sizes, too, which was super welcome."</p>
-            <div class="mt-4 text-xs font-medium">— Dody E., Yelp</div>
+            <div class="mt-4 text-xs font-medium">Dody E., Yelp</div>
           </div>
-          <div class="bg-[#f8f1e9] rounded-2xl p-6">
+          <div class="review-card bg-[#f8f1e9] rounded-2xl p-6 border border-[#e8dcc8]">
             <div class="flex text-[#c2410f] mb-3">★★★★★</div>
             <p class="text-sm leading-snug">"Delicious breakfast food. Our server Mallory was amazing! Great place to sit, relax and eat. You can tell the people here actually like what they do."</p>
-            <div class="mt-4 text-xs font-medium">— Bria C., Google</div>
+            <div class="mt-4 text-xs font-medium">Bria C., Google</div>
+          </div>
+          <!-- set 2 (duplicate for seamless loop) -->
+          <div class="review-card bg-[#f8f1e9] rounded-2xl p-6 border border-[#e8dcc8]" aria-hidden="true">
+            <div class="flex text-[#c2410f] mb-3">★★★★★</div>
+            <p class="text-sm leading-snug">"We've been to Bobola's several times for breakfast and dinner. The food is excellent, the wait staff is very attentive, servings are large and food quality is great. Bobola's has a diner-like atmosphere and is the perfect place when you're looking for some great food and service."</p>
+            <div class="mt-4 text-xs font-medium">Joe B., Google</div>
+          </div>
+          <div class="review-card bg-[#f8f1e9] rounded-2xl p-6 border border-[#e8dcc8]" aria-hidden="true">
+            <div class="flex text-[#c2410f] mb-3">★★★★★</div>
+            <p class="text-sm leading-snug">"Came in for lunch at the bar, and dang it's some great food, super friendly staff, and awesome atmosphere. I ordered the bacon cheeseburger which was really well crafted. They don't skimp on portion sizes, too, which was super welcome."</p>
+            <div class="mt-4 text-xs font-medium">Dody E., Yelp</div>
+          </div>
+          <div class="review-card bg-[#f8f1e9] rounded-2xl p-6 border border-[#e8dcc8]" aria-hidden="true">
+            <div class="flex text-[#c2410f] mb-3">★★★★★</div>
+            <p class="text-sm leading-snug">"Delicious breakfast food. Our server Mallory was amazing! Great place to sit, relax and eat. You can tell the people here actually like what they do."</p>
+            <div class="mt-4 text-xs font-medium">Bria C., Google</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- LOCATION / FINAL CTA -->
+    <!-- WE'RE LISTENING (feedback) -->
+    <section class="py-12 md:py-16">
+      <div class="tail-container">
+        <div class="bg-white border border-[#e8dcc8] rounded-3xl p-7 md:p-9 flex flex-col md:flex-row md:items-center gap-6">
+          <img src="images/chef-logo.jpg" alt="Bobola's chef" class="w-16 h-16 rounded-full object-cover shrink-0 mx-auto md:mx-0" onerror="this.src='images/logo.jpg'">
+          <div class="md:flex-1 text-center md:text-left">
+            <div class="eyebrow mb-3">WE'RE LISTENING</div>
+            <h2 class="section-title text-2xl md:text-3xl tracking-tight font-bold">Tell us how we did.</h2>
+            <p class="text-sm text-[#6b5540] mt-1 max-w-md md:max-w-xl">Good or not-so-good, it comes straight to the family, not a call center. Hearing from you is how a neighborhood place keeps getting better.</p>
+          </div>
+          <a href="feedback.html" class="warm-btn inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold shrink-0 mx-auto md:mx-0">
+            Share your visit
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M5 12h14"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION / HOURS -->
     <section class="py-12">
       <div class="tail-container">
         <div class="grid md:grid-cols-5 gap-8 items-center">
           <div class="md:col-span-3">
-            <div class="uppercase tracking-[1.5px] text-xs font-semibold text-[#c2410f]">NASHUA, NEW HAMPSHIRE</div>
+            <div class="eyebrow mb-3">NASHUA, NEW HAMPSHIRE</div>
             <h2 class="section-title text-4xl tracking-tighter font-bold mt-1 mb-3">Come sit with us.</h2>
-            <p class="max-w-md text-[#6b5540]">9 Simon Street, Nashua, NH 03060. Free parking right out front. We’re the white building with the big windows and the friendly faces inside.</p>
-            
+            <p class="max-w-md text-[#6b5540]">9 Simon Street, Nashua, NH 03060. Free parking right out front. We're the white building with the big windows and the friendly faces inside.</p>
+
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="https://maps.google.com/?q=9+Simon+Street+Nashua+NH" target="_blank" class="warm-btn px-5 py-2.5 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+              <a href="https://maps.google.com/?q=9+Simon+Street+Nashua+NH" target="_blank" rel="noopener" class="warm-btn px-5 py-2.5 rounded-full text-sm font-semibold inline-flex items-center gap-2">
                 Get Directions
               </a>
               <a href="contact.html" class="px-5 py-2.5 rounded-full text-sm font-semibold border border-[#3f2e1e] inline-flex items-center">See hours &amp; more</a>
             </div>
           </div>
-          
+
           <div class="md:col-span-2">
             <div class="bg-white rounded-2xl border border-[#e8dcc8] shadow-sm p-6">
               <div class="flex items-center gap-2 mb-4">
@@ -497,12 +597,43 @@
               </div>
               <div class="grid grid-cols-2 gap-y-2 text-sm">
                 <div class="text-[#8a6f47]">Monday</div><div class="font-medium text-red-700 text-right">Closed</div>
-                <div class="text-[#8a6f47]">Tue – Fri</div><div class="font-medium text-right">8:00am – 8:00pm</div>
-                <div class="text-[#8a6f47]">Saturday</div><div class="font-medium text-right">7:30am – 8:00pm</div>
-                <div class="text-[#8a6f47]">Sunday</div><div class="font-medium text-right">7:30am – 2:30pm</div>
+                <div class="text-[#8a6f47]">Tue - Thu</div><div class="font-medium text-right">8:00am - 3:00pm</div>
+                <div class="text-[#8a6f47]">Friday</div><div class="font-medium text-right">8:00am - 8:00pm</div>
+                <div class="text-[#8a6f47]">Saturday</div><div class="font-medium text-right">7:30am - 8:00pm</div>
+                <div class="text-[#8a6f47]">Sunday</div><div class="font-medium text-right">7:30am - 2:30pm</div>
               </div>
-              <div class="mt-4 pt-4 border-t border-[#e8dcc8] text-xs text-[#8a6f47]">Breakfast served until 2pm daily. Call ahead in bad weather.</div>
+              <div class="mt-4 pt-4 border-t border-[#e8dcc8] text-xs text-[#8a6f47]">Breakfast served until 3pm (Tue to Sat). Dinner served Friday &amp; Saturday. Call ahead in bad weather.</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR STORY (moved to the end, reframed: legacy + the food + us + forward) -->
+    <section class="bg-white border-t border-[#e8dcc8] py-12 md:py-16">
+      <div class="tail-container">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div class="relative rounded-3xl overflow-hidden shadow-xl border border-[#e8dcc8] aspect-[4/3]">
+            <img src="images/inside.jpg" alt="Inside the dining room at Bobola's" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.src='images/building/front.jpg'">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent h-2/3"></div>
+            <div class="absolute bottom-5 left-5 text-white">
+              <div class="text-[11px] uppercase tracking-[2px] opacity-80 mb-0.5">PULL UP A CHAIR</div>
+              <div class="text-xl font-semibold tracking-tight">Sit wherever you like</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="eyebrow mb-3">OUR STORY</div>
+            <h2 class="section-title text-3xl md:text-4xl tracking-tighter font-bold mb-4">Honoring where we came from, and where we're headed.</h2>
+            <p class="text-[#5c4632] leading-relaxed mb-4">
+              Bobola's started as a tribute to our father, Frank, the cook who taught us that good food and good people belong together. Eight years in, his spirit still runs this kitchen.
+            </p>
+            <p class="text-[#5c4632] leading-relaxed mb-6">
+              But this next chapter isn't only about looking back. It's about the food we put out today, the family running the place now, and the neighbors who make it worth doing. We're keeping his legacy alive the best way we know how, by moving it forward.
+            </p>
+            <a href="about.html" class="inline-flex items-center gap-2 text-sm font-semibold text-[#c2410f] hover:gap-3 transition-all">
+              Read the full story <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </div>
@@ -515,27 +646,28 @@
       <div class="flex flex-col md:flex-row md:items-center gap-y-6 justify-between text-sm">
         <div>
           <div class="flex items-center gap-3 text-white mb-1">
-            <img src="images/chef-logo.jpg" class="w-8 h-8 rounded-full opacity-90" onerror="this.src='images/logo.jpg'">
+            <img src="images/chef-logo.jpg" class="w-8 h-8 rounded-full opacity-90" alt="Bobola's chef logo" onerror="this.src='images/logo.jpg'">
             <span class="font-semibold tracking-tight">Bobola's Restaurant</span>
           </div>
           <div class="text-xs opacity-70">A little taste of home • Family-run since 2018</div>
         </div>
-        
+
         <div class="flex flex-wrap gap-x-6 gap-y-1 text-xs md:text-sm">
           <a href="about.html" class="hover:text-white">Our Story</a>
           <a href="photos.html" class="hover:text-white">Gallery</a>
-          <a href="bkmenu.html" class="hover:text-white">Breakfast</a>
+          <a href="bkmenu.html" class="hover:text-white">Menus</a>
           <a href="contact.html" class="hover:text-white">Contact</a>
+          <a href="feedback.html" class="hover:text-white">Share Feedback</a>
           <a href="hiring.html" class="hover:text-white">We're Hiring</a>
         </div>
-        
+
         <div class="text-xs md:text-sm">
-          <a href="https://www.facebook.com/BobolasRestaurant/" target="_blank" class="hover:text-white">Facebook</a> 
-          <span class="mx-2 opacity-40">·</span> 
+          <a href="https://www.facebook.com/BobolasRestaurant/" target="_blank" rel="noopener" class="hover:text-white">Facebook</a>
+          <span class="mx-2 opacity-40">·</span>
           <a href="tel:6035771086" class="hover:text-white">(603) 577-1086</a>
         </div>
       </div>
-      
+
       <div class="mt-8 pt-6 border-t border-white/10 text-[10px] opacity-50 flex flex-col md:flex-row gap-1 md:items-center justify-between">
         <div>© 2026 Bobola's Restaurant. All rights reserved. 9 Simon St, Nashua, NH 03060</div>
         <div class="flex gap-3">
@@ -546,30 +678,29 @@
   </footer>
 
   <script>
-    // Tailwind script config
-    function initTailwind() {
-      document.documentElement.style.setProperty('--accent', '#c2410f');
-    }
-    
     // Mobile menu
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileBtn && mobileMenu) {
-      mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
+      mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     }
-    
-    // Simple keyboard escape for mobile
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
         mobileMenu.classList.add('hidden');
       }
     });
-    
-    initTailwind();
-    
-    // Analytics deferred (keep original GA if wanted)
+
+    // Live Google rating (updates the static number once deployed with an API key;
+    // silently keeps the fallback number if the API isn't available).
+    fetch('/api/google-rating').then(r => r.json()).then(d => {
+      if (d && d.rating) {
+        document.querySelectorAll('[data-google-rating]').forEach(el => {
+          el.textContent = Number(d.rating).toFixed(1);
+        });
+      }
+    }).catch(() => {});
+
+    // Analytics deferred
     window.addEventListener('load', function() {
       setTimeout(function() {
         var script = document.createElement('script');

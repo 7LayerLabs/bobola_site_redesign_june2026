@@ -4,49 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Bobola's Restaurant - Family Owned in Nashua NH</title>
-  <meta name="description" content="The real story behind Bobola's in Nashua. Family-run, generous portions, neighborhood comfort food since 2018. Honoring Frank Bobola's legacy the right way." />
+  <meta name="description" content="The story behind Bobola's in Nashua. Family-run since 2018, honoring our father Frank's legacy while carrying it forward with the food and family of today." />
+  <link rel="canonical" href="https://bobolasnashua.com/about.html" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
-    .section-title { font-family: 'Playfair Display', Georgia, serif; }
-    .warm-btn { background-color: #c2410f; color: white; }
-    .warm-btn:hover { background-color: #9f3410; }
-    .story-p { font-size: 15.5px; line-height: 1.75; color: #5c4632; }
-  </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Compiled Tailwind (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20260619e" />
+  <style>.story-p { font-size: 15.5px; line-height: 1.75; color: #5c4632; }</style>
 </head>
 <body class="bg-[#f8f1e9] text-[#3f2e1e]">
   <header class="bg-white border-b border-[#e8dcc8] sticky top-0 z-50">
-    <div class="max-w-[1280px] mx-auto px-5">
+    <div class="tail-container">
       <div class="flex items-center justify-between h-16">
         <a href="index.html" class="flex items-center gap-3 group">
-          <img src="images/chef-logo.jpg" alt="Bobola's Chef" class="w-11 h-11 rounded-full object-cover ring-2 ring-[#f8f1e9]" onerror="this.src='images/logo.jpg'">
+          <img src="images/chef-logo.jpg" alt="Bobola's Chef Logo" class="w-11 h-11 rounded-full object-cover ring-2 ring-[#f8f1e9] group-hover:ring-[#c2410f]/30 transition" onerror="this.src='images/logo.jpg'">
           <div>
             <div class="font-bold text-2xl tracking-tighter leading-none">BOBOLA'S</div>
             <div class="text-[10px] text-[#8a6f47] -mt-1 font-medium">RESTAURANT</div>
           </div>
         </a>
-        <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
-          <a href="index.html" class="hover:text-[#c2410f]">Home</a>
-          <a href="about.html" class="text-[#c2410f] font-semibold">Our Story</a>
-          <a href="photos.html" class="hover:text-[#c2410f]">Photos</a>
-          <a href="contact.html" class="hover:text-[#c2410f]">Contact</a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="nav-link text-[#3f2e1e]">Home</a>
+          <a href="about.html" class="nav-link text-[#c2410f] font-semibold">Our Story</a>
+          <div class="relative group">
+            <button class="nav-link flex items-center gap-1 text-[#3f2e1e]">
+              Menus
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-[#e8dcc8] py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <a href="bkmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Breakfast</a>
+              <a href="lunchmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Lunch</a>
+              <a href="dinmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Dinner</a>
+            </div>
+          </div>
+          <a href="photos.html" class="nav-link text-[#3f2e1e]">Photos</a>
+          <a href="contact.html" class="nav-link text-[#3f2e1e]">Contact</a>
         </nav>
         <div class="hidden md:flex items-center gap-3">
-          <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="warm-btn px-5 py-2 rounded-full text-sm font-semibold">Order Online</a>
-          <a href="tel:6035771086" class="text-sm px-3">(603) 577-1086</a>
+          <a href="tel:6035771086" class="text-sm font-medium px-3 py-1.5 hover:bg-[#f8f1e9] rounded-lg">(603) 577-1086</a>
+          <div class="relative group">
+            <button class="warm-btn px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              Order Online
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-60 bg-white rounded-xl shadow-lg border border-[#e8dcc8] p-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#c2410f] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 19L5 8zM9 8V6a3 3 0 016 0v2"/></svg>
+                <span class="text-sm"><span class="font-semibold block leading-tight">Pickup</span><span class="text-xs text-[#8a6f47]">Order online with Toast</span></span>
+              </a>
+              <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <img src="images/doordash-logo.svg" alt="DoorDash" class="h-4 shrink-0">
+                <span class="text-sm"><span class="font-semibold block leading-tight">Delivery</span><span class="text-xs text-[#8a6f47]">Get it brought to you</span></span>
+              </a>
+            </div>
+          </div>
         </div>
-        <button id="mbtn" class="md:hidden p-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="md:hidden flex items-center gap-2">
+          <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="warm-btn px-4 py-1.5 rounded-full text-sm font-semibold">Order</a>
+          <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-[#f8f1e9]" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <div id="mmenu" class="hidden md:hidden border-b bg-white px-5 py-3 text-sm">
-    <a href="index.html" class="block py-1">Home</a>
-    <a href="bkmenu.html" class="block py-1">Menus</a>
-    <a href="photos.html" class="block py-1">Gallery</a>
-    <a href="contact.html" class="block py-1">Contact</a>
-    <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="block mt-2 warm-btn text-center py-2 rounded-full text-white">Order Online</a>
+  <div id="mobile-menu" class="hidden md:hidden border-b bg-white">
+    <div class="tail-container py-4 flex flex-col gap-1 text-sm font-medium">
+      <a href="index.html" class="py-2 px-1">Home</a>
+      <a href="about.html" class="py-2 px-1">Our Story</a>
+      <a href="bkmenu.html" class="py-2 px-1">Breakfast Menu</a>
+      <a href="lunchmenu.html" class="py-2 px-1">Lunch Menu</a>
+      <a href="dinmenu.html" class="py-2 px-1">Dinner Menu</a>
+      <a href="photos.html" class="py-2 px-1">Photo Gallery</a>
+      <a href="contact.html" class="py-2 px-1">Contact &amp; Hours</a>
+      <a href="feedback.html" class="py-2 px-1">Share Feedback</a>
+      <div class="pt-2 mt-2 border-t flex flex-col gap-2">
+        <a href="tel:6035771086" class="py-1.5">(603) 577-1086</a>
+        <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="warm-btn text-center py-2.5 rounded-full font-semibold">Order Pickup (Toast)</a>
+        <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="text-center py-2.5 rounded-full font-semibold border border-[#e8dcc8] inline-flex items-center justify-center gap-2"><img src="images/doordash-logo.svg" alt="DoorDash" class="h-4"> Delivery</a>
+      </div>
+    </div>
   </div>
 
   <main>
@@ -56,7 +98,7 @@
         <div class="max-w-2xl">
           <div class="inline px-3 py-1 rounded-full bg-[#f8f1e9] text-xs font-semibold tracking-wider text-[#c2410f]">FAMILY RUN • NEIGHBORHOOD OWNED</div>
           <h1 class="section-title text-5xl md:text-6xl tracking-tighter font-bold mt-3 leading-none">We're not the fanciest place in Nashua.<br>And we're proud of that.</h1>
-          <p class="mt-5 text-xl text-[#6b5540]">We put our money where it matters — on your plate. Big portions, honest food, and a seat at the table for anyone who walks through the door.</p>
+          <p class="mt-5 text-xl text-[#6b5540]">We put our money where it matters, on your plate. Big portions, honest food, and a seat at the table for anyone who walks through the door.</p>
         </div>
       </div>
     </section>
@@ -67,18 +109,20 @@
         <div class="md:col-span-5">
           <div class="sticky top-20">
             <img src="images/frankbobola.jpg" alt="Frank Bobola, founder" class="rounded-2xl shadow border border-[#e8dcc8] w-full">
-            <div class="text-xs text-[#8a6f47] mt-2 pl-1">Frank Bobola — the heart behind every plate we serve.</div>
+            <div class="text-xs text-[#8a6f47] mt-2 pl-1">Frank Bobola, the heart behind every plate we serve.</div>
           </div>
         </div>
         
         <div class="md:col-span-7">
-          <div class="uppercase text-xs tracking-[1.5px] text-[#c2410f] font-semibold mb-2">THE BOBOLA LEGACY</div>
+          <div class="eyebrow mb-4">THE BOBOLA LEGACY</div>
           <h2 class="section-title text-4xl tracking-tighter font-bold mb-5">It started with a 13-year-old dishwasher who fell in love with the work.</h2>
           
           <div class="story-p space-y-5">
-            <p>Frank Bobola started in the restaurant business at 13 as a dishwasher. He worked his way up to chef at places like The Waterwheel, Branding Iron Steak House, The Colonial Inn, and The Lakeside. In the mid-80s he opened Big Belly Deli in Lowell, which grew into Bobola's Big Belly Deli &amp; Restaurant on Gorham Street — a true neighborhood spot.</p>
+            <p>Frank Bobola started in the restaurant business at 13 as a dishwasher. He worked his way up to chef at places like The Waterwheel, Branding Iron Steak House, The Colonial Inn, and The Lakeside. In the mid-80s he opened Big Belly Deli in Lowell, which grew into Bobola's Big Belly Deli &amp; Restaurant on Gorham Street, a true neighborhood spot.</p>
             
-            <p>In 2018 the family opened this location at 9 Simon Street in Nashua. Frank passed before he got to see it open, but everything we do here still carries his belief that good food and good people belong together.</p>
+            <p>On March 19, 2018, the family opened this location at 9 Simon Street in Nashua. Frank passed before he got to see it open, but everything we do here still carries his belief that good food and good people belong together.</p>
+
+            <p>Eight years later, we're not just looking back. We're proud of the food coming out of our kitchen today and the family running the place now. Keeping Frank's legacy alive doesn't mean standing still. It means carrying his standards forward and making this place even better for the neighbors who count on us.</p>
           </div>
 
           <div class="mt-8 p-5 bg-white border border-[#e8dcc8] rounded-2xl text-sm">
@@ -125,7 +169,7 @@
     <!-- Timeline simplified -->
     <section class="max-w-[1280px] mx-auto px-5 py-12 md:py-16">
       <div class="mb-8">
-        <div class="uppercase tracking-widest text-xs text-[#c2410f]">OUR JOURNEY</div>
+        <div class="eyebrow mb-2">OUR JOURNEY</div>
         <h3 class="section-title text-3xl font-bold tracking-tight mt-1">From dishwasher to Nashua staple.</h3>
       </div>
       
@@ -140,11 +184,11 @@
         </div>
         <div class="flex gap-4 border-l-2 border-[#e8dcc8] pl-5 py-1">
           <div class="w-16 shrink-0 font-mono text-xs pt-0.5 text-[#8a6f47]">2018</div>
-          <div>Bobola's opens at 9 Simon Street, Nashua. The family carries the legacy forward.</div>
+          <div>Bobola's opens at 9 Simon Street, Nashua on March 19, 2018. The family carries the legacy forward.</div>
         </div>
         <div class="flex gap-4 border-l-2 border-[#e8dcc8] pl-5 py-1">
           <div class="w-16 shrink-0 font-mono text-xs pt-0.5 text-[#8a6f47]">TODAY</div>
-          <div>Still family-run. Still generous. Still the place where you can count on a good meal and a friendly face.</div>
+          <div>Still family-run and generous, and always evolving. New dishes, the same welcome, and a kitchen we're proud of. The next chapter is about the food and the family carrying it forward.</div>
         </div>
       </div>
     </section>
@@ -159,8 +203,8 @@
           <div class="md:w-7/12">
             <h3 class="font-semibold text-xl mb-3">About the chef on our logo</h3>
             <div class="text-sm text-[#5c4632] leading-relaxed">
-              The original logo was drawn by Frank's daughter Kimberly years ago — a little cartoon that became the face of the place. It was warm, a little quirky, and felt like family. <br><br>
-              We've given him a fresh coat of paint for this chapter, but the spirit is the same: friendly, a little fun, always welcoming. He reminds us why we do this — to make people feel at home the second they walk in.
+              The original logo was drawn by Frank's daughter Kimberly years ago, a little cartoon that became the face of the place. It was warm, a little quirky, and felt like family. <br><br>
+              We've given him a fresh coat of paint for this chapter, but the spirit is the same: friendly, a little fun, always welcoming. He reminds us why we do this, to make people feel at home the second they walk in.
             </div>
           </div>
         </div>
@@ -170,7 +214,7 @@
     <!-- Final CTA -->
     <section class="bg-[#3f2e1e] text-[#f8f1e9] py-10">
       <div class="max-w-[1280px] mx-auto px-5 text-center">
-        <div class="text-sm tracking-widest opacity-75">NO RESERVATIONS NEEDED</div>
+        <div class="eyebrow eyebrow-dark mb-3">NO RESERVATIONS NEEDED</div>
         <div class="text-2xl md:text-3xl font-semibold tracking-tight mt-1 mb-5">Just come hungry. We'll take care of the rest.</div>
         <div class="flex justify-center gap-3">
           <a href="contact.html" class="px-6 py-3 rounded-full border border-[#e8dcc8] text-sm hover:bg-white/10">See hours &amp; location</a>
@@ -192,9 +236,12 @@
   </footer>
 
   <script>
-    const mbtn = document.getElementById('mbtn');
-    const mm = document.getElementById('mmenu');
-    if (mbtn && mm) mbtn.onclick = () => mm.classList.toggle('hidden');
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    }
   </script>
 </body>
 </html>

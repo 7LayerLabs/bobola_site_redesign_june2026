@@ -8,7 +8,7 @@
 
   <!-- SEO Meta Tags -->
   <title>Dinner Menu | Bobola's Nashua NH - Best Pasta, Fresh Seafood & Comfort Food Dinners</title>
-  <meta name="description" content="The best pasta, fresh seafood & comfort food dinners in Nashua NH! Try our Italian favorites, fresh seafood, burgers & more. Served daily 3pm-close at Bobola's Restaurant." />
+  <meta name="description" content="The best pasta, fresh seafood & comfort food dinners in Nashua NH! Try our Italian favorites, fresh seafood, burgers & more. Served Friday &amp; Saturday evenings at Bobola's Restaurant." />
   <meta name="keywords" content="dinner menu Nashua NH, Bobola's dinner, Italian food, fresh seafood, pasta, comfort food, dinner restaurant Nashua, best dinner Nashua" />
   <meta name="author" content="Bobola's Restaurant" />
   <meta name="robots" content="index, follow" />
@@ -16,7 +16,7 @@
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Dinner Menu | Bobola's Nashua NH - Best Pasta, Fresh Seafood & Comfort Food Dinners" />
-  <meta property="og:description" content="The best pasta, fresh seafood & comfort food dinners in Nashua NH! Try our Italian favorites, fresh seafood, burgers & more. Served daily 3pm-close at Bobola's Restaurant." />
+  <meta property="og:description" content="The best pasta, fresh seafood & comfort food dinners in Nashua NH! Try our Italian favorites, fresh seafood, burgers & more. Served Friday &amp; Saturday evenings at Bobola's Restaurant." />
   <meta property="og:type" content="restaurant.menu" />
   <meta property="og:url" content="https://bobolasnashua.com/dinmenu.html" />
   <meta property="og:image" content="https://bobolasnashua.com/images/Home/bobolatextlogo.png" />
@@ -28,7 +28,7 @@
     "@context": "https://schema.org",
     "@type": "Menu",
     "name": "Bobola's Dinner Menu",
-    "description": "The best pasta, fresh seafood & comfort food dinners featuring Italian favorites, fresh seafood, burgers, and more. Served daily 3pm-close.",
+    "description": "The best pasta, fresh seafood & comfort food dinners featuring Italian favorites, fresh seafood, burgers, and more. Served Friday &amp; Saturday evenings.",
     "url": "https://bobolasnashua.com/dinmenu.html",
     "restaurant": {
       "@type": "Restaurant",
@@ -46,83 +46,93 @@
   </script>
 
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link rel="stylesheet" href="css/site.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>.warm-btn{background:#c2410f;color:#fff}.nav-link:hover{color:#c2410f}</style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Compiled Tailwind (no CDN) + warm menu theme -->
+  <link rel="stylesheet" href="css/tailwind.css?v=20260619e" />
+  <link rel="stylesheet" href="css/site.css?v=20260619e" />
 </head>
 
 <body>
-  <!-- Modern Header -->
-  <header class="header-modern">
-    <div class="header-modern__container">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="images/chef-logo.jpg" alt="Bobola's" class="w-10 h-10 rounded-full" onerror="this.src='images/logo.jpg'">
-        <div class="leading-none"><div class="font-bold text-2xl tracking-tighter">BOBOLA'S</div><div class="text-[9px] text-[#8a6f47] -mt-1">RESTAURANT</div></div>
-      </a>
-
-      <nav class="header-modern__nav">
-        <a href="index.html" class="header-modern__nav-link">Home</a>
-        <a href="about.html" class="header-modern__nav-link">About</a>
-        <div class="header-modern__dropdown">
-          <button class="header-modern__dropdown-toggle active">
-            Menus
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="header-modern__dropdown-menu">
-            <a href="bkmenu.html" class="header-modern__dropdown-item">Breakfast Menu</a>
-            <a href="lunchmenu.html" class="header-modern__dropdown-item">Lunch Menu</a>
-            <a href="dinmenu.html" class="header-modern__dropdown-item active">Dinner Menu</a>
-            <a href="specialmenu.html" class="header-modern__dropdown-item">Daily Specials</a>
+  <!-- Header -->
+  <header class="bg-white border-b border-[#e8dcc8] sticky top-0 z-50">
+    <div class="tail-container">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="images/chef-logo.jpg" alt="Bobola's Chef Logo" class="w-11 h-11 rounded-full object-cover ring-2 ring-[#f8f1e9] group-hover:ring-[#c2410f]/30 transition" onerror="this.src='images/logo.jpg'">
+          <div>
+            <div class="font-bold text-2xl tracking-tighter leading-none">BOBOLA'S</div>
+            <div class="text-[10px] text-[#8a6f47] -mt-1 font-medium">RESTAURANT</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="nav-link text-[#3f2e1e]">Home</a>
+          <a href="about.html" class="nav-link text-[#3f2e1e]">Our Story</a>
+          <div class="relative group">
+            <button class="nav-link flex items-center gap-1 text-[#c2410f]">
+              Menus
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-[#e8dcc8] py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <a href="bkmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Breakfast</a>
+              <a href="lunchmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9]">Lunch</a>
+              <a href="dinmenu.html" class="block px-4 py-2 text-sm hover:bg-[#f8f1e9] text-[#c2410f] font-medium">Dinner</a>
+            </div>
+          </div>
+          <a href="photos.html" class="nav-link text-[#3f2e1e]">Photos</a>
+          <a href="contact.html" class="nav-link text-[#3f2e1e]">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="tel:6035771086" class="text-sm font-medium px-3 py-1.5 hover:bg-[#f8f1e9] rounded-lg flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2 3 3 0 013 3v1m6 0v1a3 3 0 01-3 3H9a3 3 0 01-3-3V8m9 0a2 2 0 002-2V5" /></svg>
+            <span>(603) 577-1086</span>
+          </a>
+          <div class="relative group">
+            <button class="warm-btn px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              Order Online
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-60 bg-white rounded-xl shadow-lg border border-[#e8dcc8] p-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#c2410f] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 11a2 2 0 01-2 1.8H8A2 2 0 016 19L5 8zM9 8V6a3 3 0 016 0v2"/></svg>
+                <span class="text-sm"><span class="font-semibold block leading-tight">Pickup</span><span class="text-xs text-[#8a6f47]">Order online with Toast</span></span>
+              </a>
+              <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f8f1e9]">
+                <img src="images/doordash-logo.svg" alt="DoorDash" class="h-4 shrink-0">
+                <span class="text-sm"><span class="font-semibold block leading-tight">Delivery</span><span class="text-xs text-[#8a6f47]">Get it brought to you</span></span>
+              </a>
+            </div>
           </div>
         </div>
-        <a href="contact.html" class="header-modern__nav-link">Contact</a>
-        <a href="hiring.html" class="header-modern__nav-link">Hiring</a>
-      </nav>
-
-      <div class="header-modern__actions">
-        <a href="https://www.facebook.com/BobolasRestaurant/" target="_blank" class="header-modern__social" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="tel:6035771086" class="header-modern__phone">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          (603) 577-1086
-        </a>
-        <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="header-modern__cta" aria-label="Order Online">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-          <span>Order Online</span>
-        </a>
-        <button class="header-modern__mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div class="md:hidden flex items-center gap-2">
+          <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="warm-btn px-4 py-1.5 rounded-full text-sm font-semibold">Order</a>
+          <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-[#f8f1e9]" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav-overlay">
-    <div class="mobile-nav-overlay__links">
-      <a href="index.html" class="mobile-nav-overlay__link">Home</a>
-      <a href="about.html" class="mobile-nav-overlay__link">About</a>
-      <span class="mobile-nav-overlay__link">Menus</span>
-      <div class="mobile-nav-overlay__submenu">
-        <a href="bkmenu.html">Breakfast Menu</a>
-        <a href="lunchmenu.html">Lunch Menu</a>
-        <a href="dinmenu.html" class="active">Dinner Menu</a>
-        <a href="specialmenu.html">Daily Specials</a>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-[#e8dcc8]">
+    <div class="tail-container py-4 flex flex-col gap-1 text-sm font-medium">
+      <a href="index.html" class="py-2 px-1">Home</a>
+      <a href="about.html" class="py-2 px-1">Our Story</a>
+      <a href="bkmenu.html" class="py-2 px-1">Breakfast Menu</a>
+      <a href="lunchmenu.html" class="py-2 px-1">Lunch Menu</a>
+      <a href="dinmenu.html" class="py-2 px-1">Dinner Menu</a>
+      <a href="photos.html" class="py-2 px-1">Photo Gallery</a>
+      <a href="contact.html" class="py-2 px-1">Contact &amp; Hours</a>
+      <a href="feedback.html" class="py-2 px-1">Share Feedback</a>
+      <div class="pt-2 mt-2 border-t flex flex-col gap-2">
+        <a href="tel:6035771086" class="py-1.5">(603) 577-1086</a>
+        <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="warm-btn text-center py-2.5 rounded-full font-semibold">Order Pickup (Toast)</a>
+        <a href="https://www.doordash.com/store/bobola%27s-restaurant-nashua-42163289/104150355/" target="_blank" rel="noopener" class="text-center py-2.5 rounded-full font-semibold border border-[#e8dcc8] inline-flex items-center justify-center gap-2"><img src="images/doordash-logo.svg" alt="DoorDash" class="h-4"> Delivery</a>
       </div>
-      <a href="contact.html" class="mobile-nav-overlay__link">Contact</a>
-      <a href="hiring.html" class="mobile-nav-overlay__link">Hiring</a>
-    </div>
-    <div class="mobile-nav-overlay__cta">
-      <a href="tel:6035771086" class="mobile-nav-overlay__phone">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        (603) 577-1086
-      </a>
-      <a href="https://order.toasttab.com/online/bobolas" target="_blank" class="mobile-nav-overlay__order">
-        Order Online Now
-      </a>
     </div>
   </div>
 
@@ -132,13 +142,27 @@
       <div class="menu-hero__content">
         <div class="menu-hero__badge">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          Served Daily 3pm - Close
+          Served Friday &amp; Saturday, 3pm - Close
         </div>
         <h1>
           Dinner Menu
           <span>The Best Dinner in Nashua NH</span>
         </h1>
         <p>Fresh seafood, Italian classics, comfort food favorites, and more - all made from scratch.</p>
+      </div>
+    </section>
+
+    <!-- Order on Toast CTA -->
+    <section class="bg-[#3f2e1e] text-[#f8f1e9]">
+      <div class="max-w-[1280px] mx-auto px-5 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-center sm:text-left">
+        <div>
+          <div class="font-semibold tracking-tight">Order online for pickup</div>
+          <div class="text-xs text-[#e8dcc8]/70">The full ordering menu and current prices live on Toast.</div>
+        </div>
+        <a href="https://order.toasttab.com/online/bobolas" target="_blank" rel="noopener" class="warm-btn inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap">
+          Order on Toast
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M5 12h14"/></svg>
+        </a>
       </div>
     </section>
 
@@ -751,73 +775,34 @@
   </main>
 
   <!-- Modern Footer -->
-  <footer class="footer-modern">
-    <div class="footer-modern__container">
-      <div class="footer-modern__grid">
-        <div class="footer-modern__brand">
-          <a href="index.html" class="footer-modern__logo">
-            <img src="images/chef-logo.jpg" alt="Bobola's Restaurant" loading="lazy">
-            <div class="footer-modern__logo-text">
-              <span class="footer-modern__logo-primary">BOBOLA'S</span>
-              <span class="footer-modern__logo-secondary">Restaurant</span>
-            </div>
-          </a>
-          <p class="footer-modern__tagline">A little taste of home. Family-owned and proudly serving Nashua, NH since 2018.</p>
-          <div class="footer-modern__social">
-            <a href="https://www.facebook.com/BobolasRestaurant/" target="_blank" class="footer-modern__social-link" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
+  <footer class="bg-[#3f2e1e] text-[#e8dcc8] pt-10 pb-8">
+    <div class="tail-container">
+      <div class="flex flex-col md:flex-row md:items-center gap-y-6 justify-between text-sm">
+        <div>
+          <div class="flex items-center gap-3 text-white mb-1">
+            <img src="images/chef-logo.jpg" class="w-8 h-8 rounded-full opacity-90" alt="Bobola's chef logo" onerror="this.src='images/logo.jpg'">
+            <span class="font-semibold tracking-tight">Bobola's Restaurant</span>
           </div>
+          <div class="text-xs opacity-70">A little taste of home • Family-run since 2018</div>
         </div>
-
-        <div class="footer-modern__column">
-          <h3>Quick Links</h3>
-          <ul class="footer-modern__links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="hiring.html">Join Our Team</a></li>
-          </ul>
+        <div class="flex flex-wrap gap-x-6 gap-y-1 text-xs md:text-sm">
+          <a href="about.html" class="hover:text-white">Our Story</a>
+          <a href="photos.html" class="hover:text-white">Gallery</a>
+          <a href="bkmenu.html" class="hover:text-white">Menus</a>
+          <a href="contact.html" class="hover:text-white">Contact</a>
+          <a href="feedback.html" class="hover:text-white">Share Feedback</a>
+          <a href="hiring.html" class="hover:text-white">We're Hiring</a>
         </div>
-
-        <div class="footer-modern__column">
-          <h3>Our Menus</h3>
-          <ul class="footer-modern__links">
-            <li><a href="bkmenu.html">Breakfast</a></li>
-            <li><a href="lunchmenu.html">Lunch</a></li>
-            <li><a href="dinmenu.html">Dinner</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-modern__column">
-          <h3>Contact Us</h3>
-          <div class="footer-modern__contact">
-            <div class="footer-modern__contact-item">
-              <div class="footer-modern__contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              </div>
-              <div class="footer-modern__contact-text">
-                <span class="footer-modern__contact-label">Address</span>
-                <span class="footer-modern__contact-value">9 Simon St, Nashua, NH 03060</span>
-              </div>
-            </div>
-            <div class="footer-modern__contact-item">
-              <div class="footer-modern__contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              </div>
-              <div class="footer-modern__contact-text">
-                <span class="footer-modern__contact-label">Phone</span>
-                <span class="footer-modern__contact-value"><a href="tel:6035771086">(603) 577-1086</a></span>
-              </div>
-            </div>
-          </div>
+        <div class="text-xs md:text-sm">
+          <a href="https://www.facebook.com/BobolasRestaurant/" target="_blank" rel="noopener" class="hover:text-white">Facebook</a>
+          <span class="mx-2 opacity-40">·</span>
+          <a href="tel:6035771086" class="hover:text-white">(603) 577-1086</a>
         </div>
       </div>
-
-      <div class="footer-modern__bottom">
-        <p class="footer-modern__copyright">&copy; 2026 Bobola's Restaurant. All Rights Reserved.</p>
-        <div class="footer-modern__bottom-links">
-          <a href="employee.html">Employee Portal</a>
+      <div class="mt-8 pt-6 border-t border-white/10 text-[10px] opacity-50 flex flex-col md:flex-row gap-1 md:items-center justify-between">
+        <div>© 2026 Bobola's Restaurant. All rights reserved. 9 Simon St, Nashua, NH 03060</div>
+        <div class="flex gap-3">
+          <a href="employee.html" class="hover:opacity-100">Employee Portal</a>
         </div>
       </div>
     </div>
@@ -825,33 +810,12 @@
 
   <script>
     // Mobile menu toggle
-    const mobileToggle = document.querySelector('.header-modern__mobile-toggle');
-    const mobileNav = document.querySelector('.mobile-nav-overlay');
-
-    mobileToggle.addEventListener('click', () => {
-      mobileToggle.classList.toggle('active');
-      mobileNav.classList.toggle('active');
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close mobile menu on link click
-    document.querySelectorAll('.mobile-nav-overlay a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileToggle.classList.remove('active');
-        mobileNav.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.header-modern');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    }
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
